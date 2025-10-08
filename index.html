@@ -5,62 +5,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Halfmoon CSS -->
     <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/halfmoon.min.css" rel="stylesheet" integrity="sha256-RjeFzczeuZHCyS+Gvz+kleETzBF/o84ZRHukze/yv6o=" crossorigin="anonymous">
-    <title>Clavaris Almussafes 2026</title>
-    <link rel="stylesheet" href="syles.css">
+    <title>Clavaris de la Divina Aurora</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #7775c9, #133d74);
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003b8e, #0055cc);
+            color: rgb(186, 221, 255);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-left: 2.5rem;
+        }
+
+        .header-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #003b8e;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+
+        header .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+  .social-icon {
+        width: 100px;
+        height: 100px;
+        margin-left: 1rem;
+        border-radius: 50%;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+        transform: scale(1.1);
+        opacity: 0.75;
+    }
+
+    /* Para mantener el título centrado visualmente */
+    .header-center {
+        margin-right: 90px; /* espacio visual para compensar ancho de iconos */
+
+    }
+
+        .card {
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        h2 {
+            color: #004aad;
+        }
+
+        .gallery-vertical img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            color: #004aad;
+            margin-top: 2rem;
+        }
+
+        /* Eventos */
+        .event-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .event-card {
+            background: #e7f1ff;
+            border-left: 6px solid #004aad;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .event-card h4 {
+            color: #004aad;
+            margin-bottom: 0.3rem;
+        }
+
+        .event-card p {
+            margin: 0.2rem 0;
+        }
+
+        .event-date {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .event-place {
+            font-style: italic;
+            color: #444;
+        }
+           @media (max-width: 768px) {
+        .card-body {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .header-center {
+            margin-right: 0;
+        }
+    }
+    </style>
 </head>
 <body>
-    <header>
-  <img src="/escut.PNG" alt="Clavaris Almussafes 2026 Logo" class="logo">
+
+<header>
+    <div class="card shadow-sm border-0 p-3">
+        <div class="card-body d-flex align-items-center justify-content-between">
+            
+            <!-- Logo a la izquierda -->
+            <div class="header-left d-flex align-items-center">
+                <img src="/escut.PNG" alt="Clavaris Almussafes 2026 Logo" class="logo">
+            </div>
+
+            <!-- Título centrado -->
+            <div class="header-center text-center flex-grow-1">
+                <h1 class="header-title mb-0">Clavaris de la Divina Aurora</h1>
+            </div>
+
+            <!-- Redes sociales a la derecha -->
+            <div class="header-right d-flex align-items-center gap-2">
+                <a href="https://www.instagram.com/clavarisalmussafes2026" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                    <img src="tiktok.png" alt="Facebook" class="social-icon">
+                </a>
+            </div>
+
+        </div>
+    </div>
 </header>
-<footer></footer>
 
-<main class="full-width">
-  <div class="row g-4 full-height">
-    <!-- Gallery -->
-    <section class="col-12 col-md-4">
-      <div class="card shadow-sm border-0 h-100">
-        <div class="card-body text-center d-flex flex-column justify-content-between">
-          <h2 class="card-title mb-3">Els clavaris</h2>
-          <div class="gallery-vertical">
-            <img src="josep.jpeg" alt="Gallery Image 1">
-            <img src="fuente.jpeg" alt="Gallery Image 2">
-            <img src="arnauxavi.jpeg" alt="Gallery Image 3">
 
-          </div>
-        </div>
-      </div>
-    </section>
+<main class="full-width container my-4">
+    <div class="row g-4 full-height">
 
-    <!-- Next Event -->
-    <section class="col-12 col-md-4">
-      <div class="card shadow-sm border-0 h-100">
-        <div class="card-body text-center d-flex flex-column justify-content-top">
-          <h2 class="card-title mb-3">Proxim event</h2>
-          <p>Stay tuned for our next big celebration in Almussafes! More details will be announced soon.</p>
-        </div>
-      </div>
-    </section>
+        <!-- Galeria -->
+        <section class="col-12 col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body text-center">
+                    <h2 class="card-title mb-3">Els Clavaris</h2>
+                    <div class="gallery-vertical">
+                        <img src="josep.jpeg" alt="Josep">
+                        <img src="fuente.jpeg" alt="Fuente">
+                        <img src="arnauxavi.jpeg" alt="Arnau i Xavi">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Social Links -->
-    <section class="col-12 col-md-4">
-      <div class="card shadow-sm border-0 h-100">
-        <div class="card-body text-center d-flex flex-column justify-content-top">
-          <h2 class="card-title mb-3">Follow Us</h2>
-          <div class="d-flex flex-column gap-3 align-items-center">
-            <a href="#" class="btn btn-outline-dark w-50" target="_blank">Instagram</a>
-            <a href="#" class="btn btn-outline-dark w-50" target="_blank">TikTok</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+        <!-- Próximos eventos -->
+        <section class="col-12 col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-3">Pròxims Events</h2>
+
+                    <div class="event-list">
+                        <!-- Evento 1 -->
+                        <div class="event-card">
+                            <h4>Festa de Benvinguda</h4>
+                            <p class="event-date">📅 14 de Març de 2026</p>
+                            <p class="event-place">📍 Plaça Major, Almussafes</p>
+                            <p class="event-description">Celebrem el començament oficial de l’any amb música, menjar i germanor.</p>
+                        </div>
+
+                        <!-- Evento 2 -->
+                        <div class="event-card">
+                            <h4>Dinar dels Clavaris</h4>
+                            <p class="event-date">📅 20 d’Abril de 2026</p>
+                            <p class="event-place">📍 Restaurant L’Almussafeny</p>
+                            <p class="event-description">Un dinar tradicional per reunir-nos i compartir moments especials amb els companys i familiars.</p>
+                        </div>
+
+                        <!-- Evento 3 -->
+                        <div class="event-card">
+                            <h4>Festa Major d’Almussafes</h4>
+                            <p class="event-date">📅 10 al 15 de Juliol de 2026</p>
+                            <p class="event-place">📍 Carrers del poble</p>
+                            <p class="event-description">Una setmana plena d’activitats, processons, concerts i molta alegria per a tot el poble.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rifas & Loteries -->
+        <section class="col-12 col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body text-center">
+                    <h2 class="card-title mb-3">Rifes & Loteries</h2>
+                    <img src="LOTERIA.jfif" alt="Loteria" class="img-fluid rounded shadow-sm">
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
 
+<footer>
+    <p>&copy; 2026 Clavaris Almussafes. Tots els drets reservats.</p>
+</footer>
 
-    <footer>
-        <p>&copy; 2026 Clavaris Almussafes. All rights reserved.</p>
-    </footer>
-     <!-- Option 1: Bootstrap JS bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=" crossorigin="anonymous"></script>
 </body>
 </html>

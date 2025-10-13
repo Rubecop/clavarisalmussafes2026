@@ -30,6 +30,7 @@
             font-weight: 700;
             color: #003b8e;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            text-align: center;
         }
 
         header .logo {
@@ -37,13 +38,13 @@
             height: auto;
             margin-bottom: 0.5rem;
         }
-  .social-icon {
-        width: 100px;
-        height: 100px;
-        margin-left: 1rem;
-        border-radius: 50%;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-    }
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            margin-left: 0.5rem;
+            border-radius: 50%;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
 
     .social-icon:hover {
         transform: scale(1.1);
@@ -117,17 +118,33 @@
             font-style: italic;
             color: #444;
         }
-           @media (max-width: 768px) {
-        .card-body {
-            flex-direction: column;
-            text-align: center;
-            gap: 1rem;
-        }
-
-        .header-center {
-            margin-right: 0;
-        }
+          @media (max-width: 768px) {
+    /* Header en columna */
+    header .card-body {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
     }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .header-title {
+        font-size: 2rem;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 0.5rem;
+    }
+
+    /* Asegurar márgenes entre secciones */
+    main .row > section {
+        margin-bottom: 1.5rem;
+    }
+}
     </style>
 </head>
 <body>

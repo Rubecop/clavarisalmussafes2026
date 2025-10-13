@@ -120,12 +120,17 @@
         }
           @media (max-width: 768px) {
     header .card-body {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
         gap: 1rem;
-        padding: 1.5rem 1rem !important; /* centrado vertical */
+        padding: 1.5rem 1rem !important;
+    }
+
+    /* Sobrescribe la alineación de Bootstrap */
+    header .card-body.d-flex {
+        justify-content: center !important;
     }
 
     .header-left,
@@ -133,34 +138,34 @@
     .header-right {
         width: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
     }
 
-    .logo {
-        margin: 0 auto;
-        width: 90px;
-        height: auto;
+    .header-center {
+        margin-right: 0 !important;
     }
 
     .header-title {
-        font-size: 2.2rem;
-        text-align: center;
-        margin: 0.5rem 0;
+        font-size: 2.3rem;
         line-height: 1.2;
+        text-align: center !important;
+        margin: 0.5rem 0;
         color: #003b8e;
+        width: 100%;
+    }
+
+    .logo {
+        width: 100px;
+        margin: 0 auto 0.5rem auto !important;
+        display: block;
     }
 
     .social-icon {
         width: 45px;
         height: 45px;
         margin: 0 0.4rem;
-    }
-
-    /* ajusta el espaciado general del header */
-    header {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
     }
 }
     </style>
@@ -169,7 +174,7 @@
 
 <header>
     <div class="card shadow-sm border-0 p-3">
-        <div class="card-body d-flex align-items-center justify-content-between">
+        <div class="card-body d-flex align-items-center justify-content-center flex-wrap">
             
             <!-- Logo a la izquierda -->
             <div class="header-left d-flex align-items-center">

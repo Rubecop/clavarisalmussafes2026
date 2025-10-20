@@ -5,170 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Halfmoon CSS -->
     <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/halfmoon.min.css" rel="stylesheet" integrity="sha256-RjeFzczeuZHCyS+Gvz+kleETzBF/o84ZRHukze/yv6o=" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="escut.PNG">
     <title>Clavaris de la Divina Aurora</title>
-    <style>
-        body {
-            background: linear-gradient(135deg, #7775c9, #133d74);
-            font-family: 'Segoe UI', sans-serif;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(90deg, #003b8e, #0055cc);
-            color: rgb(186, 221, 255);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-
-        .logo {
-            width: 80px;
-            height: auto;
-            margin-left: 2.5rem;
-        }
-
-        .header-title {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #003b8e;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-
-        header .logo {
-            width: 120px;
-            height: auto;
-            margin-bottom: 0.5rem;
-        }
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            margin-left: 0.5rem;
-            border-radius: 50%;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
-
-    .social-icon:hover {
-        transform: scale(1.1);
-        opacity: 0.75;
-    }
-
-    /* Para mantener el título centrado visualmente */
-    .header-center {
-        margin-right: 90px; /* espacio visual para compensar ancho de iconos */
-    }
-
-        .card {
-            border-radius: 10px;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-        }
-
-        h2 {
-            color: #004aad;
-        }
-
-        .gallery-vertical img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 0.8rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background: white;
-            color: #004aad;
-            margin-top: 2rem;
-        }
-
-        /* Eventos */
-        .event-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            text-align: left;
-        }
-
-        .event-card {
-            background: #e7f1ff;
-            border-left: 6px solid #004aad;
-            border-radius: 8px;
-            padding: 1rem 1.2rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .event-card h4 {
-            color: #004aad;
-            margin-bottom: 0.3rem;
-        }
-
-        .event-card p {
-            margin: 0.2rem 0;
-        }
-
-        .event-date {
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        .event-place {
-            font-style: italic;
-            color: #444;
-        }
-          @media (max-width: 768px) {
-    header .card-body {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        gap: 1rem;
-        padding: 1.5rem 1rem !important;
-    }
-
-    /* Sobrescribe la alineación de Bootstrap */
-    header .card-body.d-flex {
-        justify-content: center !important;
-    }
-
-    .header-left,
-    .header-center,
-    .header-right {
-        width: 100%;
-        display: flex;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-    .header-center {
-        margin-right: 0 !important;
-    }
-
-    .header-title {
-        font-size: 2.3rem;
-        line-height: 1.2;
-        text-align: center !important;
-        margin: 0.5rem 0;
-        color: #003b8e;
-        width: 100%;
-    }
-
-    .logo {
-        width: 100px;
-        margin: 0 auto 0.5rem auto !important;
-        display: block;
-    }
-
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        margin: 0 0.4rem;
-    }
-}
-    </style>
+    <link rel="stylesheet" href="syles.css">
 </head>
 <body>
 
@@ -204,18 +43,74 @@
 <main class="full-width container my-4">
     <div class="row g-4 full-height">
 
-        <!-- Galeria -->
+        <!-- ✅ Carrusel de Els Clavaris -->
         <section class="col-12 col-md-4">
             <div class="card shadow-sm border-0 h-100">
                 <div class="card-body text-center">
                     <h2 class="card-title mb-3">Els Clavaris</h2>
-                    <div class="gallery-vertical">
-                        <img src="josep.jpeg" alt="Josep">
-                        <img src="fuente.jpeg" alt="Fuente">
-                        <img src="arnauxavi.jpeg" alt="Arnau i Xavi">
+
+                    <div id="clavarisCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner rounded shadow-sm">
+                            <div class="carousel-item active">
+                                <img src="c1.jpeg" class="d-block w-100 rounded" alt="Josep">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="c2.jpeg" class="d-block w-100 rounded" alt="Fuente">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="c3.jpeg" class="d-block w-100 rounded" alt="Arnau i Xavi">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="c4.jpeg" class="d-block w-100 rounded" alt="Arnau i Xavi">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="c5.jpeg" class="d-block w-100 rounded" alt="Arnau i Xavi">
+                            </div>
+                        </div>
+
+                        <!-- Controles -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#clavarisCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#clavarisCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Següent</span>
+                        </button>
                     </div>
                 </div>
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body text-center">
+                <h2 class="card-title mb-3">El nostre Clavari Major</h2>
+                
+                <div id="clavariMajorCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded shadow-sm">
+                        <div class="carousel-item active">
+                            <img src="miguel1.jpeg" class="d-block w-100 rounded" alt="Clavari Major 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="miguel2.jpeg" class="d-block w-100 rounded" alt="Clavari Major 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="miguel3.jpeg" class="d-block w-100 rounded" alt="Clavari Major 3">
+                        </div>
+                    </div>
+
+                    <!-- Controles -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#clavariMajorCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#clavariMajorCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Següent</span>
+                    </button>
+                </div>
             </div>
+            </div>
+
+            <!-- ✅ Carrusel de Clavari Major -->
+
         </section>
 
         <!-- Próximos eventos -->
@@ -225,29 +120,26 @@
                     <h2 class="card-title text-center mb-3">Pròxims Events</h2>
 
                     <div class="event-list">
-                        <!-- Evento 1 -->
                         <div class="event-card">
                             <h4>Nit de Halloween</h4>
                             <p class="event-date">📅 31 d'Octubre de 2025 a les 23:00</p>
-                            <p class="event-place">📍  Pista Polivalent</p>
+                            <p class="event-place">📍 Pista Polivalent</p>
                             <p class="event-description">Festa de disfraços y discomóvil</p>
                         </div>
-
-                        <!-- Evento 2 -->
+<!-- 
                         <div class="event-card">
                             <h4>Dinar dels Clavaris</h4>
                             <p class="event-date">📅 20 d’Abril de 2026</p>
                             <p class="event-place">📍 Restaurant L’Almussafeny</p>
                             <p class="event-description">Un dinar tradicional per reunir-nos i compartir moments especials amb els companys i familiars.</p>
-                        </div>
-
-                        <!-- Evento 3 -->
+                        </div> -->
+<!-- 
                         <div class="event-card">
                             <h4>Festa Major d’Almussafes</h4>
                             <p class="event-date">📅 10 al 15 de Juliol de 2026</p>
                             <p class="event-place">📍 Carrers del poble</p>
                             <p class="event-description">Una setmana plena d’activitats, processons, concerts i molta alegria per a tot el poble.</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -258,16 +150,161 @@
             <div class="card shadow-sm border-0 h-100">
                 <div class="card-body text-center">
                     <h2 class="card-title mb-3">Rifes & Loteries</h2>
-                    <img src="LOTERIA.jfif" alt="Loteria" class="img-fluid rounded shadow-sm">
+                    <img src="rifa18-10.jpeg" alt="Loteria" class="img-fluid rounded shadow-sm">
                 </div>
             </div>
         </section>
     </div>
 </main>
 
-<footer>
-    <p>&copy; 2026 Clavaris Almussafes. Tots els drets reservats.</p>
+<footer class="footer-section text-center mt-5 py-4">
+    <div class="footerText mb-3">
+        <h6>Comerços que col·laboren:</h6>
+    </div>
+      <div class="comercios-grid">
+        <div class="comercio-item">
+            <img src="/logos/abel marrtí pvc.jpeg" alt="Abel Martí PVC" class="comercio-logo">
+            <span class="comercio-name">Abel Martí PVC</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/adrines.jpg" alt="Adrines" class="comercio-logo">
+            <span class="comercio-name">Adrines</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Alma centro estética.jpg" alt="Alma Centro Estética" class="comercio-logo">
+            <span class="comercio-name">Alma Centro Estética</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/AlMontessori.jpg" alt="AlMontessori" class="comercio-logo">
+            <span class="comercio-name">AlMontessori</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Almucasa.jpg" alt="Almucasa" class="comercio-logo">
+            <span class="comercio-name">Almucasa</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Bar Hungria.jpg" alt="Bar Hungría" class="comercio-logo">
+            <span class="comercio-name">Bar Hungría</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Birras y tragones II.jpg" alt="Birras y Tragones II" class="comercio-logo">
+            <span class="comercio-name">Birras y Tragones II</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Carioca logo 2025.jpg" alt="Carioca" class="comercio-logo">
+            <span class="comercio-name">Carioca</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/CGA-LOGO-car-service.jpg" alt="CGA Car Service" class="comercio-logo">
+            <span class="comercio-name">CGA Car Service</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Clínica villalba II.png" alt="Clínica Villalba II" class="comercio-logo">
+            <span class="comercio-name">Clínica Villalba II</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Colaita.jpg" alt="Colaita" class="comercio-logo">
+            <span class="comercio-name">Colaita</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/cook for you.jpg" alt="Cook For You" class="comercio-logo">
+            <span class="comercio-name">Cook For You</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Cross atlética.jpg" alt="Cross Atlética" class="comercio-logo">
+            <span class="comercio-name">Cross Atlética</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/db method.jpg" alt="DB Method" class="comercio-logo">
+            <span class="comercio-name">DB Method</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Farmacia Aparici.jpeg" alt="Farmacia Aparici" class="comercio-logo">
+            <span class="comercio-name">Farmacia Aparici</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Farmacia Sebastián.png" alt="Farmacia Sebastián" class="comercio-logo">
+            <span class="comercio-name">Farmacia Sebastián</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/flow camper vans.jpg" alt="Flow Camper Vans" class="comercio-logo">
+            <span class="comercio-name">Flow Camper Vans</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Fontaneria Salvador Lladosa.jpg" alt="Fontaneria Salvador Lladosa" class="comercio-logo">
+            <span class="comercio-name">Fontaneria Salvador Lladosa</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Forn Rosa.jpg" alt="Forn Rosa" class="comercio-logo">
+            <span class="comercio-name">Forn Rosa</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/inmobiliaria ferrús.png" alt="Inmobiliaria Ferrús" class="comercio-logo">
+            <span class="comercio-name">Inmobiliaria Ferrús</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/judez joyeros.png" alt="Judez Joyeros" class="comercio-logo">
+            <span class="comercio-name">Judez Joyeros</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/La barberia fruits secs.jpg" alt="La Barberia Fruits Secs" class="comercio-logo">
+            <span class="comercio-name">La Barberia Fruits Secs</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Logo Maviclim SLU.jpg" alt="Maviclim SLU" class="comercio-logo">
+            <span class="comercio-name">Maviclim SLU</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Logopèdia Andre 1.png" alt="Logopèdia Andre" class="comercio-logo">
+            <span class="comercio-name">Logopèdia Andre</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/my prince craft.jpeg" alt="My Prince Craft" class="comercio-logo">
+            <span class="comercio-name">My Prince Craft</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Norita.jpg" alt="Norita" class="comercio-logo">
+            <span class="comercio-name">Norita</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/PArafarmacia Vero.jpg" alt="Parafarmacia Vero" class="comercio-logo">
+            <span class="comercio-name">Parafarmacia Vero</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/pinturas cuevas.png" alt="Pinturas Cuevas" class="comercio-logo">
+            <span class="comercio-name">Pinturas Cuevas</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Silvia Saló.jpeg" alt="Silvia Saló" class="comercio-logo">
+            <span class="comercio-name">Silvia Saló</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/Telca Logo.jpg" alt="Telca" class="comercio-logo">
+            <span class="comercio-name">Telca</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/TOTOBRA Y ALQUILAME.png" alt="Totobra y Alquilame" class="comercio-logo">
+            <span class="comercio-name">Totobra y Alquilame</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/valhala gym.jpg" alt="Valhala Gym" class="comercio-logo">
+            <span class="comercio-name">Valhala Gym</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/VMC.png" alt="VMC" class="comercio-logo">
+            <span class="comercio-name">VMC</span>
+        </div>
+        <div class="comercio-item">
+            <img src="/logos/yoko-kan.jpg" alt="Yoko-Kan" class="comercio-logo">
+            <span class="comercio-name">Yoko-Kan</span>
+        </div>
+    </div>
+    </div>
 </footer>
+
+<!-- ✅ Halfmoon JS (para los carruseles) -->
+<script src="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/js/halfmoon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

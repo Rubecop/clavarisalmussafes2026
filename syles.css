@@ -1,133 +1,285 @@
-body {
-  font-family: "Times New Roman", serif;
-  background-color: #c4b3d4;
-  color: #000;
-  margin: 0;
-  padding: 0;
-  overflow-y: scroll;
+ body {
+            background: linear-gradient(135deg, #7775c9, #133d74);
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003b8e, #0055cc);
+            color: rgb(186, 221, 255);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-left: 2.5rem;
+        }
+
+        .header-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #003b8e;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        header .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            margin-left: 0.5rem;
+            border-radius: 50%;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+    .social-icon:hover {
+        transform: scale(1.1);
+        opacity: 0.75;
+    }
+
+    /* Para mantener el título centrado visualmente */
+    .header-center {
+        margin-right: 90px; /* espacio visual para compensar ancho de iconos */
+    }
+
+        .card {
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        h2 {
+            color: #004aad;
+        }
+
+        .gallery-vertical img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            color: #004aad;
+            margin-top: 2rem;
+        }
+
+        /* Eventos */
+        .event-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .event-card {
+            background: #e7f1ff;
+            border-left: 6px solid #004aad;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .event-card h4 {
+            color: #004aad;
+            margin-bottom: 0.3rem;
+        }
+
+        .event-card p {
+            margin: 0.2rem 0;
+        }
+
+        .event-date {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .event-place {
+            font-style: italic;
+            color: #444;
+        }
+        #clavariMajorCarousel {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        #clavariMajorCarousel img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+            padding: 10px;
+        }
+        /* ----- FOOTER ----- */
+        .footer-section {
+            background-color: #f8f9fa; /* tono claro elegante */
+            border-top: 2px solid #ddd;
+        }
+
+        .footerText h6 {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* ----- GRID DE COMERCIOS ----- */
+       .footer-section {
+    background-color: #f8f9fa;
+    border-top: 2px solid #ddd;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    width: 100%;
 }
 
-/* === Header === */
-header {
-  background-color: #f8f8f8; /* color más claro que el fondo */
-  padding: 30px 0;
-  text-align: center;
-  border-bottom: 2px solid #000;
+.footerText h6 {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.logo {
-  width: 150px;
-  height: auto;
+/* ----- GRID DE COMERCIOS ----- */
+.comercios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
-/* === Estructura principal === */
-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  min-height: 90vh;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-  gap: 0; /* sin separación */
+/* ----- LOGOS REDONDOS ----- */
+.comercio-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-/* === Columnas === */
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  box-sizing: border-box;
-  overflow-y: auto;
+.comercio-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border-color: #007bff;
 }
 
-/* proporciones exactas */
-section:nth-child(1) { width: 35vw; }
-section:nth-child(2) { width: 50vw; }
-section:nth-child(3) { width: 15vw; }
-
-/* === Galería vertical === */
-.gallery-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  overflow-y: auto;
-  max-height: 80vh;
+/* Contenedor del item (clave para el tooltip) */
+.comercio-item {
+    /* Esencial: establece el punto de referencia para el tooltip absoluto */
+    position: relative; 
+    /* Asegura que el logo y el nombre estén centrados dentro de su celda de grid */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Necesario para acomodar el tooltip por encima del logo sin cortarse */
+    padding-top: 20px; 
 }
 
-.gallery-vertical img {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+/* Estilo del Tooltip (el nombre del comercio) */
+.comercio-name {
+    position: absolute;
+    /* Posicionamiento: Arriba del logo */
+    top: -5px; 
+    left: 50%;
+    /* Centra horizontalmente y ajusta la posición inicial */
+    transform: translate(-50%, 0); 
+
+    /* Estilos del Tooltip */
+    background-color: #343a40; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap; /* Evita que el texto se rompa */
+    z-index: 10; 
+    pointer-events: none; /* Permite interactuar con el logo a través del tooltip */
+
+    /* Ocultar por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.gallery-vertical img:hover {
-  transform: scale(1.05);
+/* Mostrar el Tooltip al pasar el ratón por el item */
+.comercio-item:hover .comercio-name {
+    opacity: 1;
+    visibility: visible;
+    /* Pequeño movimiento hacia arriba para una animación suave */
+    transform: translate(-50%, -10px); 
 }
 
-/* === Texto central === */
-.event {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
+          @media (max-width: 768px) {
+    header .card-body {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 1rem;
+        padding: 1.5rem 1rem !important;
+    }
 
-/* === Social === */
-.social {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+    /* Sobrescribe la alineación de Bootstrap */
+    header .card-body.d-flex {
+        justify-content: center !important;
+    }
 
-.btn-outline-dark {
-  border-radius: 8px;
-  border: 2px solid #000;
-  color: #000;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  width: 70%;
-  margin: 10px auto;
-}
-.full-width {
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-}
-.btn-outline-dark:hover {
-  background-color: #000;
-  color: #fff;
-  transform: scale(1.05);
-}
+    .header-left,
+    .header-center,
+    .header-right {
+        width: 100%;
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
 
-/* === Footer === */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-top: 1px solid #000;
-  font-size: 0.9rem;
-}
+    .header-center {
+        margin-right: 0 !important;
+    }
 
-/* === Responsive === */
-@media (max-width: 992px) {
-  main {
-    flex-direction: column;
-  }
+    .header-title {
+        font-size: 2.3rem;
+        line-height: 1.2;
+        text-align: center !important;
+        margin: 0.5rem 0;
+        color: #003b8e;
+        width: 100%;
+    }
 
-  section {
-    width: 100vw !important;
-  }
+    .logo {
+        width: 100px;
+        margin: 0 auto 0.5rem auto !important;
+        display: block;
+    }
 
-  .gallery-vertical {
-    max-height: 50vh;
-  }
-
-  .logo {
-    width: 180px;
-  }
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        margin: 0 0.4rem;
+    }
+.comercio-logo {
+        width: 65px;
+        height: 65px;
+    }
+    .comercios-grid {
+        gap: 15px;
+        padding: 0 15px;
+    }
 }

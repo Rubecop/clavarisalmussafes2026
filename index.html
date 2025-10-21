@@ -127,8 +127,8 @@
                             <p class="event-description">Festa de disfraços y discomóvil</p>
                             
                             <!-- Cartel de Halloween expandible -->
-                            <img src="rifa18-10.jpeg" alt="Cartel Halloween" class="event-poster">
-                            <p class="poster-hint">👆 Mantén presionado para ampliar</p>
+                            <img src="jalowin.PNG" alt="Cartel Halloween" class="event-poster" id="halloweenPoster">
+                            <p class="poster-hint">👆 Clic para ampliar</p>
                         </div>
                     </div>
                 </div>
@@ -324,10 +324,42 @@
         </div>
     </div>
 </footer>
-
+<div id="imageModal" class="image-modal">
+    <span class="close-modal" id="closeModal">&times;</span>
+    <img class="modal-content" id="modalImage" src="" alt="Cartel Halloween">
+</div>
 <!-- ✅ Halfmoon JS (para los carruseles) -->
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/js/halfmoon.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // ========== POPUP DE IMAGEN ==========
+    const poster = document.getElementById('halloweenPoster');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.getElementById('closeModal');
+
+    // Abrir modal al hacer clic en la imagen
+    if (poster) {
+        poster.addEventListener('click', function() {
+            modal.classList.add('active');
+            modalImg.src = this.src;
+        });
+    }
+
+    // Cerrar modal con el botón X
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+        });
+    }
+    // Cerrar con la tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+        }
+    });
+</script>
 <script>
     // Funcionalidad para mostrar/ocultar botón de visitar al hacer clic
     document.querySelectorAll('.comercio-item').forEach(item => {

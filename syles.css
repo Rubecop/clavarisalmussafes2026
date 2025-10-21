@@ -1,12 +1,37 @@
- body {
-            background: linear-gradient(135deg, #7775c9, #133d74);
+body {
+            background: linear-gradient(360deg, #0F4C5C, #5F0F40);
             font-family: 'Segoe UI', sans-serif;
             color: #333;
+            position: relative;
+        }
+
+        /* Patrón de fondo con calabazas y fantasmas */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+            background-image: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="50" font-size="40">🎃</text></svg>'),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="50" font-size="35">👻</text></svg>');
+            background-size: 100px 100px, 120px 120px;
+            background-position: 0 0, 50px 50px;
+            background-repeat: repeat;
+        }
+
+        /* Asegurar que el contenido esté sobre el patrón */
+        header, main, footer {
+            position: relative;
+            z-index: 1;
         }
 
         header {
-            background: linear-gradient(90deg, #003b8e, #0055cc);
-            color: rgb(186, 221, 255);
+            color: rgb(201, 147, 1);
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
@@ -19,8 +44,8 @@
         .header-title {
             font-size: 3rem;
             font-weight: 700;
-            color: #003b8e;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            color: #0F4C5C;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
             text-align: center;
         }
 
@@ -50,6 +75,9 @@
         .card {
             border-radius: 10px;
             transition: transform 0.2s;
+            background: linear-gradient(270deg, #c40327, #FB8B24);
+            color: #5F0F40;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
         }
 
         .card:hover {
@@ -70,7 +98,7 @@
         footer {
             text-align: center;
             padding: 1.5rem;
-            background: white;
+            background: linear-gradient(270deg, #c40327, #FB8B24);
             color: #004aad;
             margin-top: 2rem;
         }
@@ -88,6 +116,7 @@
             border-radius: 8px;
             padding: 1rem 1.2rem;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         .event-card h4 {
@@ -109,6 +138,93 @@
             color: #444;
         }
 
+        /* Imagen del cartel expandible */
+        .event-poster {
+            width: 100%;
+            max-width: 150px;
+            margin: 1rem auto 0;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .event-poster:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transform: scale(1.05);
+        }
+
+        /* Texto de ayuda para el cartel */
+        .poster-hint {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Modal/Popup para la imagen */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10000;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .close-modal:hover {
+            color: #ff6b6b;
+            transform: scale(1.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
         #clavariMajorCarousel {
             max-width: 100%;
             margin: 0 auto;
@@ -121,7 +237,7 @@
 
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: #FB8B24;
             border-radius: 50%;
             padding: 10px;
         }
@@ -201,7 +317,6 @@
             transform: translate(-50%, -10px);
         }
 
-        /* Botón de visitar */
         .visit-btn {
             display: none;
             margin-top: 8px;
@@ -245,6 +360,11 @@
         }
 
         @media (max-width: 768px) {
+            body::before {
+                background-size: 60px 60px, 80px 80px;
+                opacity: 0.05;
+            }
+
             header .card-body {
                 flex-direction: column !important;
                 align-items: center !important;
@@ -301,5 +421,9 @@
             .comercios-grid {
                 gap: 15px;
                 padding: 0 15px;
+            }
+
+            .event-poster:active {
+                transform: scale(2);
             }
         }

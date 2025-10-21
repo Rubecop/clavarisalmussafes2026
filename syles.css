@@ -29,6 +29,7 @@
             height: auto;
             margin-bottom: 0.5rem;
         }
+
         .social-icon {
             width: 50px;
             height: 50px;
@@ -37,15 +38,14 @@
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
-    .social-icon:hover {
-        transform: scale(1.1);
-        opacity: 0.75;
-    }
+        .social-icon:hover {
+            transform: scale(1.1);
+            opacity: 0.75;
+        }
 
-    /* Para mantener el título centrado visualmente */
-    .header-center {
-        margin-right: 90px; /* espacio visual para compensar ancho de iconos */
-    }
+        .header-center {
+            margin-right: 90px;
+        }
 
         .card {
             border-radius: 10px;
@@ -75,7 +75,6 @@
             margin-top: 2rem;
         }
 
-        /* Eventos */
         .event-list {
             display: flex;
             flex-direction: column;
@@ -109,6 +108,7 @@
             font-style: italic;
             color: #444;
         }
+
         #clavariMajorCarousel {
             max-width: 100%;
             margin: 0 auto;
@@ -125,161 +125,181 @@
             border-radius: 50%;
             padding: 10px;
         }
-        /* ----- FOOTER ----- */
+
         .footer-section {
-            background-color: #f8f9fa; /* tono claro elegante */
+            background-color: #f8f9fa;
             border-top: 2px solid #ddd;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            width: 100%;
         }
 
         .footerText h6 {
             font-weight: 600;
             color: #333;
+            margin-bottom: 20px;
         }
 
-        /* ----- GRID DE COMERCIOS ----- */
-       .footer-section {
-    background-color: #f8f9fa;
-    border-top: 2px solid #ddd;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    width: 100%;
-}
+        .comercios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            gap: 25px;
+            justify-items: center;
+            align-items: center;
+            width: 100%;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
 
-.footerText h6 {
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-}
+        .comercio-logo {
+            width: 85px;
+            height: 85px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            cursor: pointer;
+        }
 
-/* ----- GRID DE COMERCIOS ----- */
-.comercios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 25px;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    padding: 0 40px;
-    box-sizing: border-box;
-}
+        .comercio-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            border-color: #007bff;
+        }
 
-/* ----- LOGOS REDONDOS ----- */
-.comercio-logo {
-    width: 85px;
-    height: 85px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-    background-color: #fff;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
+        .comercio-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
 
-.comercio-logo:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    border-color: #007bff;
-}
+        .comercio-name {
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            background-color: #343a40;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
 
-/* Contenedor del item (clave para el tooltip) */
-.comercio-item {
-    /* Esencial: establece el punto de referencia para el tooltip absoluto */
-    position: relative; 
-    /* Asegura que el logo y el nombre estén centrados dentro de su celda de grid */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Necesario para acomodar el tooltip por encima del logo sin cortarse */
-    padding-top: 20px; 
-}
+        .comercio-item:hover .comercio-name {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -10px);
+        }
 
-/* Estilo del Tooltip (el nombre del comercio) */
-.comercio-name {
-    position: absolute;
-    /* Posicionamiento: Arriba del logo */
-    top: -5px; 
-    left: 50%;
-    /* Centra horizontalmente y ajusta la posición inicial */
-    transform: translate(-50%, 0); 
+        /* Botón de visitar */
+        .visit-btn {
+            display: none;
+            margin-top: 8px;
+            padding: 6px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+            animation: slideDown 0.3s ease;
+        }
 
-    /* Estilos del Tooltip */
-    background-color: #343a40; /* Fondo oscuro */
-    color: white; /* Texto blanco */
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    white-space: nowrap; /* Evita que el texto se rompa */
-    z-index: 10; 
-    pointer-events: none; /* Permite interactuar con el logo a través del tooltip */
+        .visit-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+        }
 
-    /* Ocultar por defecto */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
+        .comercio-item.active .visit-btn {
+            display: block;
+        }
 
-/* Mostrar el Tooltip al pasar el ratón por el item */
-.comercio-item:hover .comercio-name {
-    opacity: 1;
-    visibility: visible;
-    /* Pequeño movimiento hacia arriba para una animación suave */
-    transform: translate(-50%, -10px); 
-}
+        .comercio-item.active .comercio-logo {
+            border-color: #007bff;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+        }
 
-          @media (max-width: 768px) {
-    header .card-body {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        gap: 1rem;
-        padding: 1.5rem 1rem !important;
-    }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    /* Sobrescribe la alineación de Bootstrap */
-    header .card-body.d-flex {
-        justify-content: center !important;
-    }
+        @media (max-width: 768px) {
+            header .card-body {
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                gap: 1rem;
+                padding: 1.5rem 1rem !important;
+            }
 
-    .header-left,
-    .header-center,
-    .header-right {
-        width: 100%;
-        display: flex;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
+            header .card-body.d-flex {
+                justify-content: center !important;
+            }
 
-    .header-center {
-        margin-right: 0 !important;
-    }
+            .header-left,
+            .header-center,
+            .header-right {
+                width: 100%;
+                display: flex;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
 
-    .header-title {
-        font-size: 2.3rem;
-        line-height: 1.2;
-        text-align: center !important;
-        margin: 0.5rem 0;
-        color: #003b8e;
-        width: 100%;
-    }
+            .header-center {
+                margin-right: 0 !important;
+            }
 
-    .logo {
-        width: 100px;
-        margin: 0 auto 0.5rem auto !important;
-        display: block;
-    }
+            .header-title {
+                font-size: 2.3rem;
+                line-height: 1.2;
+                text-align: center !important;
+                margin: 0.5rem 0;
+                color: #003b8e;
+                width: 100%;
+            }
 
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        margin: 0 0.4rem;
-    }
-.comercio-logo {
-        width: 65px;
-        height: 65px;
-    }
-    .comercios-grid {
-        gap: 15px;
-        padding: 0 15px;
-    }
-}
+            .logo {
+                width: 100px;
+                margin: 0 auto 0.5rem auto !important;
+                display: block;
+            }
+
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                margin: 0 0.4rem;
+            }
+
+            .comercio-logo {
+                width: 65px;
+                height: 65px;
+            }
+
+            .comercios-grid {
+                gap: 15px;
+                padding: 0 15px;
+            }
+        }

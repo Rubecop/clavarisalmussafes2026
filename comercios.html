@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comerços Col·laboradors | Clavaris de la Divina Aurora</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="escut.PNG">
+  <link rel="stylesheet" href="syles.css">
+</head>
+<body>
+
+<header class="text-center py-3 bg-light border-bottom">
+  <a href="index.html" class="btn btn-info m-1">Inicio</a>
+  <a href="eventos.html" class="btn btn-info m-1">Eventos</a>
+  <a href="sorteos.html" class="btn btn-info m-1">Sorteos</a>
+  <a href="comercios.html" class="btn btn-info m-1 active">Comercios</a>
+</header>
+
+<main class="container text-center my-5">
+  <h2>Comerços Col·laboradors</h2>
+  <p class="text-light">Selecciona una categoria per veure els comerços associats</p>
+
+  <!-- Botones de categoría -->
+  <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+    <button class="btn btn-primary filter-btn active" data-category="tots">Tots</button>
+    <button class="btn btn-outline-primary filter-btn" data-category="bars">Bares</button>
+    <button class="btn btn-outline-primary filter-btn" data-category="farmacies">Farmàcies</button>
+    <button class="btn btn-outline-primary filter-btn" data-category="estetica">Estètica</button>
+    <button class="btn btn-outline-primary filter-btn" data-category="serveis">Serveis</button>
+    <button class="btn btn-outline-primary filter-btn" data-category="altres">Altres</button>
+  </div>
+
+<div id="carouselTodos" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner text-center">
+    <div class="carousel-item active">
+      <img src="logos/carniceria1.png" class="comercio-logo d-block mx-auto" alt="Carnicería Paco">
+      <p class="comercio-nombre mt-2">Carnicería Paco</p>
+    </div>
+    <div class="carousel-item">
+      <img src="logos/bar1.png" class="comercio-logo d-block mx-auto" alt="Bar Central">
+      <p class="comercio-nombre mt-2">Bar Central</p>
+    </div>
+    <div class="carousel-item">
+      <img src="logos/panaderia1.png" class="comercio-logo d-block mx-auto" alt="Panadería Pepa">
+      <p class="comercio-nombre mt-2">Panadería Pepa</p>
+    </div>
+    <div class="carousel-item">
+      <img src="logos/floristeria1.png" class="comercio-logo d-block mx-auto" alt="Floristería Rosa">
+      <p class="comercio-nombre mt-2">Floristería Rosa</p>
+    </div>
+    <div class="carousel-item">
+      <img src="logos/ferreteria1.png" class="comercio-logo d-block mx-auto" alt="Ferretería Juan">
+      <p class="comercio-nombre mt-2">Ferretería Juan</p>
+    </div>
+  </div>
+
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselTodos" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselTodos" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+
+  <!-- Grid de comercios (oculto al principio si es "tots") -->
+  <div id="comerciosGrid" class="comercios-grid" style="display: none;">
+
+    <div class="comercio-item" data-category="bars" data-url="https://share.google/7sRzOIzKvDBOlAIzB">
+      <img src="logos/Bar%20Hungria.jpg" alt="Bar Hungría" class="comercio-logo">
+      <div class="comercio-name">Bar Hungría</div>
+      <button class="visit-btn">Visitar</button>
+    </div>
+
+    <div class="comercio-item" data-category="farmacies" data-url="https://share.google/3hKiVZC7C6fF0FXgL">
+      <img src="logos/Farmacia%20Aparici.jpeg" alt="Farmacia Aparici" class="comercio-logo">
+      <div class="comercio-name">Farmacia Aparici</div>
+      <button class="visit-btn">Visitar</button>
+    </div>
+
+    <div class="comercio-item" data-category="estetica" data-url="https://share.google/AV2U32TOruoXDIGGB">
+      <img src="logos/Alma%20centro%20estética.jpg" alt="Alma Centro Estética" class="comercio-logo">
+      <div class="comercio-name">Alma Centro Estética</div>
+      <button class="visit-btn">Visitar</button>
+    </div>
+
+    <div class="comercio-item" data-category="serveis">
+      <img src="logos/Carniceria%20Juan.jpg" alt="Carnicería Juan" class="comercio-logo">
+      <div class="comercio-name">Carnicería Juan</div>
+      <button class="visit-btn">Visitar</button>
+    </div>
+
+    <div class="comercio-item" data-category="altres">
+      <img src="logos/Panaderia%20Sol.jpg" alt="Panadería Sol" class="comercio-logo">
+      <div class="comercio-name">Panadería Sol</div>
+      <button class="visit-btn">Visitar</button>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Clavaris de la Divina Aurora — Almussafes</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const comercios = document.querySelectorAll('.comercio-item');
+  const grid = document.getElementById('comerciosGrid');
+  const carousel = document.getElementById('carouselTodos');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active', 'btn-primary'));
+      buttons.forEach(b => b.classList.add('btn-outline-primary'));
+      btn.classList.add('active', 'btn-primary');
+      btn.classList.remove('btn-outline-primary');
+
+      const cat = btn.getAttribute('data-category');
+
+      if (cat === 'tots') {
+        carousel.style.display = 'block';
+        grid.style.display = 'none';
+      } else {
+        carousel.style.display = 'none';
+        grid.style.display = 'grid';
+        comercios.forEach(c => {
+          c.style.display = (c.dataset.category === cat) ? 'flex' : 'none';
+        });
+      }
+    });
+  });
+
+  document.querySelectorAll('.comercio-logo').forEach(logo => {
+    logo.addEventListener('click', () => {
+      const item = logo.closest('.comercio-item');
+      item.classList.toggle('active');
+    });
+  });
+
+  document.querySelectorAll('.visit-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const url = btn.closest('.comercio-item').dataset.url;
+      if (url) window.open(url, '_blank');
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

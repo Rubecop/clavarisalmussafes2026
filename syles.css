@@ -33,7 +33,70 @@ body {
         header {
             color: rgb(201, 147, 1);
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            overflow: visible;
         }
+       
+/* Calabazas adicionales */
+.header-pumpkin {
+    position: absolute;
+    font-size: 2.5rem;
+    z-index: 10;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.pumpkin-1 {
+    top: 20px;
+    left: 45%;
+    transform: rotate(-25deg);
+    animation-delay: 0.5s;
+}
+
+.pumpkin-2 {
+    top: 115px;
+    right: 5%;
+    transform: rotate(20deg);
+    animation-delay: 2s;
+}
+
+.pumpkin-3 {
+    top: 105px;
+    left: 24%;
+    font-size: 4rem;
+    transform: rotate(10deg);
+    animation-delay: 1s;
+}
+
+.pumpkin-4 {
+    top: 25px;
+    right: 30%;
+    font-size: 2rem;
+    transform: rotate(-10deg);
+    animation-delay: 2.5s;
+}
+.pumpkin-5 {
+    top: 55px;
+    left: 12%;
+    font-size: 3rem;
+    transform: rotate(-15deg);
+    animation-delay: 0s;
+}
+
+.pumpkin-6 {
+    top: 60px;
+    right: 15%;
+    font-size: 3rem;
+    transform: rotate(15deg);
+    animation-delay: 1.5s;
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(var(--rotate, 0deg));
+    }
+    50% {
+        transform: translateY(-10px) rotate(var(--rotate, 0deg));
+    }
+}
 
         .logo {
             width: 80px;
@@ -176,21 +239,23 @@ body {
             background-color: rgba(0, 0, 0, 0.9);
             animation: fadeIn 0.3s ease;
         }
-
+        
         .image-modal.active {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
+        
         .modal-content {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: none;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
             border-radius: 12px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
             animation: zoomIn 0.3s ease;
         }
-
+        
         .close-modal {
             position: absolute;
             top: 20px;
@@ -200,27 +265,27 @@ body {
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            z-index: 10000;
+            z-index: 1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
-
+        
         .close-modal:hover {
             color: #ff6b6b;
-            transform: scale(1.2);
+            transform: scale(3);
         }
-
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
+        
         @keyframes zoomIn {
             from {
                 transform: scale(0.5);
                 opacity: 0;
             }
             to {
-                transform: scale(1);
+                transform: scale(5);
                 opacity: 1;
             }
         }
@@ -400,7 +465,48 @@ body {
                 color: #003b8e;
                 width: 100%;
             }
-
+            header::before,
+            header::after {
+                font-size: 2rem;
+            }
+            
+            .header-pumpkin {
+                font-size: 1.8rem;
+            }
+            
+            .pumpkin-1 {
+                top: 20px;
+                left: 45%;
+                transform: rotate(-25deg);
+                animation-delay: 0.5s;
+                display:none;
+            }
+            
+            .pumpkin-2 {
+                top: 115px;
+                right: 5%;
+                transform: rotate(20deg);
+                animation-delay: 2s;
+                display: block;
+            }
+            
+            .pumpkin-3 {
+                top: 125px;
+                left: 24%;
+                font-size: 2rem;
+                transform: rotate(10deg);
+                animation-delay: 1s;
+        
+            }
+            
+            .pumpkin-4 {
+                top: 25px;
+                right: 30%;
+                font-size: 2rem;
+                transform: rotate(-10deg);
+                animation-delay: 2.5s;
+                display: none;
+            }
             .logo {
                 width: 100px;
                 margin: 0 auto 0.5rem auto !important;
@@ -425,5 +531,17 @@ body {
 
             .event-poster:active {
                 transform: scale(2);
+            }
+            .modal-content {
+                max-width: 95vw;
+                max-height: 85vh;
+                width: auto;
+                height: auto;
+            }
+        
+            .close-modal {
+                top: 10px;
+                right: 15px;
+                font-size: 35px;
             }
         }

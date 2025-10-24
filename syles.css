@@ -1,4 +1,4 @@
-body {
+        body {
             background: linear-gradient(360deg, #0F4C5C, #5F0F40);
             font-family: 'Segoe UI', sans-serif;
             color: #333;
@@ -28,12 +28,19 @@ body {
         header, main, footer {
             position: relative;
             z-index: 1;
+            
+        }
+        .header-wrapper {
+            border: 2px solid #fff2e7;
+            border-radius: 15px;
+            overflow: hidden;  /* Contiene todo dentro */
         }
 
         header {
             color: rgb(201, 147, 1);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            overflow: visible;
+            overflow: visible;  /* Las calabazas pueden salir */
+            border: none;  /* Quitar el borde de aquí */
+            border-radius: 0;
         }
         .nav-buttons {
             display: flex;
@@ -43,14 +50,14 @@ body {
             flex-wrap: wrap;
             padding-bottom: 15px;
         }
-
         .nav-btn {
             background: linear-gradient(180deg, #FB8B24 0%, #FF6B00 100%);
             color: #5F0F40;
             font-weight: 1000;
             font-size: 1.1rem;
             padding: 12px 30px;
-            border: 2px black #ddd;
+            border: 2px solid #833b01;  /* ← CORRECTO: grosor + estilo + color */
+            border-radius: 15px;
             background-color: #fff;
             cursor: pointer;
             position: relative;
@@ -60,7 +67,6 @@ body {
             min-width: 350px;
             box-shadow: 0 3px 6px rgba(20, 20, 20, 0.2);
         }
-
         .nav-btn:hover {
             background: linear-gradient(180deg, #c40327 0%, #a00220 100%);
             color: #FFD700;
@@ -72,59 +78,59 @@ body {
             transform: translateY(0);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-/* Calabazas adicionales */
-.header-pumpkin {
-    position: absolute;
-    font-size: 2.5rem;
-    z-index: 10;
-    animation: float 3s ease-in-out infinite;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
-}
+        /* Calabazas adicionales */
+        .header-pumpkin {
+            position: absolute;
+            font-size: 2.5rem;
+            z-index: 10;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+        }
 
-.pumpkin-1 {
-    top: 20px;
-    left: 45%;
-    transform: rotate(-25deg);
-    animation-delay: 0.5s;
-}
+        .pumpkin-1 {
+            top: 20px;
+            left: 45%;
+            transform: rotate(-25deg);
+            animation-delay: 0.5s;
+        }
 
-.pumpkin-2 {
-    top: 115px;
-    right: 5%;
-    transform: rotate(20deg);
-    animation-delay: 2s;
-}
+        .pumpkin-2 {
+            top: 115px;
+            right: 5%;
+            transform: rotate(20deg);
+            animation-delay: 2s;
+        }
 
-.pumpkin-3 {
-    top: 105px;
-    left: 24%;
-    font-size: 4rem;
-    transform: rotate(10deg);
-    animation-delay: 1s;
-}
+        .pumpkin-3 {
+            top: 105px;
+            left: 24%;
+            font-size: 4rem;
+            transform: rotate(10deg);
+            animation-delay: 1s;
+        }
 
-.pumpkin-4 {
-    top: 25px;
-    right: 30%;
-    font-size: 2rem;
-    transform: rotate(-10deg);
-    animation-delay: 2.5s;
-}
-.pumpkin-5 {
-    top: 55px;
-    left: 12%;
-    font-size: 3rem;
-    transform: rotate(-15deg);
-    animation-delay: 0s;
-}
+        .pumpkin-4 {
+            top: 25px;
+            right: 30%;
+            font-size: 2rem;
+            transform: rotate(-10deg);
+            animation-delay: 2.5s;
+        }
+        .pumpkin-5 {
+            top: 55px;
+            left: 12%;
+            font-size: 3rem;
+            transform: rotate(-15deg);
+            animation-delay: 0s;
+        }
 
-.pumpkin-6 {
-    top: 60px;
-    right: 15%;
-    font-size: 3rem;
-    transform: rotate(15deg);
-    animation-delay: 1.5s;
-}
+        .pumpkin-6 {
+            top: 60px;
+            right: 15%;
+            font-size: 3rem;
+            transform: rotate(15deg);
+            animation-delay: 1.5s;
+        }
 @keyframes float {
     0%, 100% {
         transform: translateY(0) rotate(var(--rotate, 0deg));
@@ -210,8 +216,8 @@ body {
         }
 
         .event-card {
-            background: #e7f1ff;
-            border-left: 6px solid #004aad;
+            background: #ffb8c5;
+            border-left: 6px solid #9A031E;
             border-radius: 8px;
             padding: 1rem 1.2rem;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -219,7 +225,7 @@ body {
         }
 
         .event-card h4 {
-            color: #004aad;
+            color: #9A031E;
             margin-bottom: 0.3rem;
         }
 
@@ -310,21 +316,21 @@ body {
             transform: scale(3);
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes zoomIn {
-            from {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-            to {
-                transform: scale(5);
-                opacity: 1;
-            }
-        }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(5);
+        opacity: 1;
+    }
+}
 
         #clavariMajorCarousel {
             max-width: 100%;
@@ -449,18 +455,19 @@ body {
             box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
         }
 
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
+    
             body::before {
                 background-size: 60px 60px, 80px 80px;
                 opacity: 0.05;

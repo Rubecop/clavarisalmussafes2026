@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviar sugerencia | Clavaris de la Divina Aurora</title>
+  <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/halfmoon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="syles.css">
+  <link rel="icon" type="image/png" href="escut.PNG">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+<div class = "header-wrapper">    
+        <span class="header-pumpkin pumpkin-1" style="--rotate: -25deg;">🎃</span>
+        <span class="header-pumpkin pumpkin-2" style="--rotate: 20deg;">🎃</span>
+        <span class="header-pumpkin pumpkin-3" style="--rotate: 10deg;">🎃</span>
+        <span class="header-pumpkin pumpkin-4" style="--rotate: -10deg;">🎃</span>
+        <span class="header-pumpkin pumpkin-5" style="--rotate: -15deg;">🎃</span>
+        <span class="header-pumpkin pumpkin-6" style="--rotate: 15deg;">🎃</span>
+        
+        <div class="card shadow-sm border-0 p-3">
+            <div class="card-body d-flex align-items-center justify-content-center flex-wrap">
+                
+                <!-- Logo a la izquierda -->
+                <div class="header-left d-flex align-items-center">
+                    <img src="escut.PNG" alt="Clavaris Almussafes 2026 Logo" class="logo">
+                </div>
+    
+                <!-- Título centrado -->
+                <div class="header-center text-center flex-grow-1">
+                    <h1 class="header-title mb-0">Clavaris de la Divina Aurora</h1>
+                </div>
+    
+                <!-- Redes sociales a la derecha -->
+            <div class="header-right d-flex align-items-center gap-2">
+                    <a href="https://www.instagram.com/clavarisalmussafes2026" target="_blank">
+                        <img src="instagram.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://www.facebook.com/share/19ccn8DqNH/" target="_blank">
+                        <img src="facebook.webp" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="sugerencias.html" target="_blank">
+                        <img src="correito.webp" alt="Correo" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+</div>    
+        <!-- Botones de navegación -->
+        <nav class="nav-buttons">
+            <a href="index.html" class="nav-btn">INICI</a>
+            <a href="eventos.html" class="nav-btn">EVENTS</a>
+            <a href="sorteos.html" class="nav-btn">RIFES</a>
+            <a href="comercios.html" class="nav-btn">COMERÇOS</a>
+
+        </nav>
+    
+</header>
+
+
+  <!-- FORMULARIO DE SUGERENCIAS -->
+  <main class="sugerencias-container">
+    <h2 class="sugerencias-title">¡Envíanos tu sugerencia!</h2>
+    <p class="sugerencias-subtitle">
+      Queremos mejorar cada día. Cuéntanos tus ideas o comentarios.
+    </p>
+
+    <form action="#" method="post" class="sugerencias-form">
+      <div class="form-group">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="correo" class="form-label">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje" class="form-label">Tu sugerencia</label>
+        <textarea id="mensaje" name="mensaje" class="form-control" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-enviar">Enviar sugerencia</button>
+    </form>
+  </main>
+
+  <footer class="footer text-center py-3">
+    <small>&copy; 2025 Clavaris de la Divina Aurora — Almussafes</small>
+  </footer>
+</body>
+</html>

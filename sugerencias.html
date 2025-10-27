@@ -8,7 +8,110 @@
   <link rel="stylesheet" href="syles.css">
   <link rel="icon" type="image/png" href="escut.PNG">
 </head>
-
+<style>
+  /* ----- CONTENEDOR GENERAL ----- */
+  .sugerencias-container {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 40px 50px;
+    background-color: #f9fbff;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .sugerencias-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ----- TITULOS ----- */
+  .sugerencias-title {
+    font-size: 1.9rem;
+    color: #0a3c5f;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .sugerencias-subtitle {
+    color: #506070;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  
+  /* ----- FORMULARIO ----- */
+  .form-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-label {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  /* ----- CAMPOS DE TEXTO ----- */
+  .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #cfd8dc;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+    outline: none;
+  }
+  
+  /* ----- BOTÓN ENVIAR ----- */
+  .btn-enviar {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(13, 110, 253, 0.2);
+  }
+  
+  .btn-enviar:hover {
+    background-color: #0b5ed7;
+    box-shadow: 0 4px 14px rgba(13, 110, 253, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  /* ----- FOOTER ----- */
+  .footer {
+    margin-top: 50px;
+    background-color: #001f3f;
+    color: white;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+  
+  /* ----- RESPONSIVE ----- */
+  @media (max-width: 600px) {
+    .sugerencias-container {
+      padding: 25px;
+      margin: 20px;
+    }
+    .sugerencias-title {
+      font-size: 1.6rem;
+    }
+  }
+  </style>
+  
 <body>
   <!-- HEADER -->
   <header>
@@ -60,35 +163,31 @@
 </header>
 
 
-  <!-- FORMULARIO DE SUGERENCIAS -->
-  <main class="sugerencias-container">
-    <h2 class="sugerencias-title">¡Envíanos tu sugerencia!</h2>
-    <p class="sugerencias-subtitle">
-      Queremos mejorar cada día. Cuéntanos tus ideas o comentarios.
-    </p>
+<!-- FORMULARIO DE SUGERENCIAS -->
+<main class="sugerencias-container">
+  <h2 class="sugerencias-title">¡Envíanos tu sugerencia!</h2>
+  <p class="sugerencias-subtitle">
+    Queremos mejorar cada día. Cuéntanos tus ideas o comentarios.
+  </p>
 
-    <form action="#" method="post" class="sugerencias-form">
-      <div class="form-group">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" id="nombre" name="nombre" class="form-control" required>
-      </div>
+  <form id="form-sugerencias">
+    <div class="form-group">
+      <label for="correo" class="form-label">Correo electrónico</label>
+      <input type="email" id="correo" name="correo" class="form-control" required>
+    </div>
 
-      <div class="form-group">
-        <label for="correo" class="form-label">Correo electrónico</label>
-        <input type="email" id="correo" name="correo" class="form-control" required>
-      </div>
+    <div class="form-group">
+      <label for="mensaje" class="form-label">Tu sugerencia</label>
+      <textarea id="mensaje" name="mensaje" class="form-control" rows="5" required></textarea>
+    </div>
 
-      <div class="form-group">
-        <label for="mensaje" class="form-label">Tu sugerencia</label>
-        <textarea id="mensaje" name="mensaje" class="form-control" rows="5" required></textarea>
-      </div>
-
-      <button type="submit" class="btn-enviar">Enviar sugerencia</button>
-    </form>
-  </main>
+    <button type="submit" id="mandar-sugerencia" class="btn-enviar">Enviar sugerencia</button>
+  </form>
+</main>
 
   <footer class="footer text-center py-3">
     <small>&copy; 2025 Clavaris de la Divina Aurora — Almussafes</small>
   </footer>
+  <script src="scripts.js"></script>
 </body>
 </html>

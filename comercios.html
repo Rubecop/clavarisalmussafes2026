@@ -15,39 +15,64 @@
   <link rel="icon" type="image/png" href="escut.PNG">
 
   <style>
-    /* ==== CARD ==== */
-    .specific-w-300 { width: 300px; }
-    .mw-100 { max-width: 100%; }
-    .carousel-card-wrap { display: flex; justify-content: center; padding: 2rem 0; }
-    .card-img-top { object-fit: cover; width: 100%; }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: rgba(0,0,0,0.35);
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      background-size: 20px 20px;
-    }
-    @media (max-width: 420px) {
-      .specific-w-300 { width: 90%; }
-    }
+/* ==== CARD ==== */
+.specific-w-300 { width: 300px; }
+.mw-100 { max-width: 100%; }
+.carousel-card-wrap { display: flex; justify-content: center; padding: 2rem 0; }
+.card-img-top { object-fit: cover; width: 100%; height: 150px; border-radius: 8px; }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-size: 20px 20px;
+}
 
-    /* ==== GRID ==== */
-    .grid-container {
-      display: none;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+@media (max-width: 420px) {
+    .specific-w-300 { width: 90%; }
+}
 
-    .grid-item {
-      text-align: center;
-    }
+/* ns pq cojones no funcioona en el css normal esta para revisar */
+.grid-container {
+    display: none; /* Mostrar con JS */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
 
-    .active-category {
-      background-color: #0d6efd;
-      color: white !important;
-    }
+/* Cada card con altura uniforme */
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 300px; /* Altura uniforme para todas */
+    border-radius: 10px;
+}
+
+.grid-item .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ocupa todo el grid-item */
+}
+
+.grid-item .card-img-top {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* ==== BOTONES DE CATEGORÍA ==== */
+.active-category {
+    background-color: #0d6efd;
+    color: white !important;
+}
+
   </style>
 </head>
 <body>
@@ -97,138 +122,655 @@
     </div>
 
     <!-- ==== CARRUSEL DE CARDS ==== -->
-    <section id="carousel-section" class="mt-4">
-      <div id="cardsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-wrap="true">
-        <div class="carousel-inner">
+ <section id="carousel-section">
+<div id="carouselTots" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Abel Martí PVC" class="card-img-top" height="240" src="/logos/abel marrtí pvc.jpeg"/>
+<div class="card-body">
+<h5 class="card-title">Abel Martí PVC</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/D99v8Kvyv6uDvwRPn" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Adrines" class="card-img-top" height="240" src="/logos/adrines.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Adrines</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/eh1yCGA6DgamzeEas" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Alma Centro Estética" class="card-img-top" height="240" src="/logos/Alma centro estética.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Alma Centro Estética</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/AV2U32TOruoXDIGGB" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="AlMontessori" class="card-img-top" height="240" src="/logos/AlMontessori.jpg"/>
+<div class="card-body">
+<h5 class="card-title">AlMontessori</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://www.instagram.com/_al.montessori/" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Almucasa" class="card-img-top" height="240" src="/logos/Almucasa.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Almucasa</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/7gx2JLWLvFvxUr4zt" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Bar Hungría" class="card-img-top" height="240" src="/logos/Bar Hungria.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Bar Hungría</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/7sRzOIzKvDBOlAIzB" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Birras y Tragones II" class="card-img-top" height="240" src="/logos/Birras y tragones II.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Birras y Tragones II</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/0L4ahpu6IR5TvHRYG" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Carioca" class="card-img-top" height="240" src="/logos/Carioca logo 2025.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Carioca</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/OWAJwWXrXDV7dTHGl" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="CGA Car Service" class="card-img-top" height="240" src="/logos/CGA-LOGO-car-service.jpg"/>
+<div class="card-body">
+<h5 class="card-title">CGA Car Service</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/yN1pLfjvJuDmD6qxc" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Clínica Villalba II" class="card-img-top" height="240" src="/logos/Clínica villalba II.png"/>
+<div class="card-body">
+<h5 class="card-title">Clínica Villalba II</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/t8ZQD0qOXApKzfZby" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Colaita" class="card-img-top" height="240" src="/logos/Colaita.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Colaita</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/rnRNVZZsrwN0JhiID" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Cook For You" class="card-img-top" height="240" src="/logos/cook for you.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Cook For You</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/skkTxaylbeecHrmjy" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Cross Atlética" class="card-img-top" height="240" src="/logos/Cross atlética.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Cross Atlética</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/5HDOdBASGxkYEp0Gy" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="DB Method" class="card-img-top" height="240" src="/logos/db method.jpg"/>
+<div class="card-body">
+<h5 class="card-title">DB Method</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://almussafes.comercioscomunitatvalenciana.com/es/comercios/view/db-method-entrenador-personal" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Farmacia Aparici" class="card-img-top" height="240" src="/logos/Farmacia Aparici.jpeg"/>
+<div class="card-body">
+<h5 class="card-title">Farmacia Aparici</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/3hKiVZC7C6fF0FXgL" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Farmacia Sebastián" class="card-img-top" height="240" src="/logos/Farmacia Sebastián.png"/>
+<div class="card-body">
+<h5 class="card-title">Farmacia Sebastián</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/igUZgXayFuMMHhyQj" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Flow Camper Vans" class="card-img-top" height="240" src="/logos/flow camper vans.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Flow Camper Vans</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/8bg0Xau4Xo7VXOPlV" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Fontaneria Salvador Lladosa" class="card-img-top" height="240" src="/logos/Fontaneria Salvador Lladosa.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Fontaneria Salvador Lladosa</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/0b9yMWGbvYUx2b6R0" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Forn Rosa" class="card-img-top" height="240" src="/logos/Forn Rosa.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Forn Rosa</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/OIIqjZbopqCHQCeOi" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Inmobiliaria Ferrús" class="card-img-top" height="240" src="/logos/inmobiliaria ferrús.png"/>
+<div class="card-body">
+<h5 class="card-title">Inmobiliaria Ferrús</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/lLEIZlMhfp2SvIxXt" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Judez Joyeros" class="card-img-top" height="240" src="/logos/judez joyeros.png"/>
+<div class="card-body">
+<h5 class="card-title">Judez Joyeros</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/l3K5C69IHNV6o355O" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="La Barberia Fruits Secs" class="card-img-top" height="240" src="/logos/La barberia fruits secs.jpg"/>
+<div class="card-body">
+<h5 class="card-title">La Barberia Fruits Secs</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/FRqHH2wuVqHDa3fdE" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Maviclim SLU" class="card-img-top" height="240" src="/logos/Logo Maviclim SLU.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Maviclim SLU</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/08WlbXVjbHMEO2JC9" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Logopèdia Andre" class="card-img-top" height="240" src="/logos/Logopèdia Andre 1.png"/>
+<div class="card-body">
+<h5 class="card-title">Logopèdia Andre</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/IQrVcgyWeqruFCtoN" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="My Prince Craft" class="card-img-top" height="240" src="/logos/my prince craft.jpeg"/>
+<div class="card-body">
+<h5 class="card-title">My Prince Craft</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://www.instagram.com/myprincecraft/" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Norita" class="card-img-top" height="240" src="/logos/Norita.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Norita</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/RMZDhXSn4wzYmx4H1" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Parafarmacia Vero" class="card-img-top" height="240" src="/logos/PArafarmacia Vero.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Parafarmacia Vero</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/YT8QGDiQJfqxDPhnt" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Pinturas Cuevas" class="card-img-top" height="240" src="/logos/pinturas cuevas.png"/>
+<div class="card-body">
+<h5 class="card-title">Pinturas Cuevas</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/PwdltdfYkpq6lnHlO" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Silvia Saló" class="card-img-top" height="240" src="/logos/Silvia Saló.jpeg"/>
+<div class="card-body">
+<h5 class="card-title">Silvia Saló</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/IHFCwGtu5JFcMDCeU" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Telca" class="card-img-top" height="240" src="/logos/Telca Logo.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Telca</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/7ztZVzQMUw0T52fl6" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Totobra y Alquilame" class="card-img-top" height="240" src="/logos/TOTOBRA Y ALQUILAME.png"/>
+<div class="card-body">
+<h5 class="card-title">Totobra y Alquilame</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/pYF15xrKh0Ox9f20c" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Valhala Gym" class="card-img-top" height="240" src="/logos/valhala gym.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Valhala Gym</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/PEZMB24vrnpGOGXAH" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="VMC" class="card-img-top" height="240" src="/logos/VMC.png"/>
+<div class="card-body">
+<h5 class="card-title">VMC</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://www.facebook.com/p/VMC-Madera-61575053754980/" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Yoko-Kan" class="card-img-top" height="240" src="/logos/yoko-kan.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Yoko-Kan</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/QhOjQb42YWdDA7yDJ" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="CambridgeCenterAlmussafes" class="card-img-top" height="240" src="/logos/CambridgeCenterAlmussafes.jpg"/>
+<div class="card-body">
+<h5 class="card-title">CambridgeCenterAlmussafes</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/6GANucsd18i6Zko4k" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Clinica Dental Lucia Soler" class="card-img-top" height="240" src="/logos/CLINICA DENTAL Lucia Soler LOGO (1)_page-0002.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Clinica Dental Lucia Soler</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/l3WoHuWx6rqIQ1yiZ" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Comercial Agricola" class="card-img-top" height="240" src="/logos/Comercial agrícola_page-0001.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Comercial Agricola</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/hPG3XW5dh3k5vTuJR" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Farmacia Guerrero" class="card-img-top" height="240" src="/logos/farmacia guerrero_page-0001.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Farmacia Guerrero</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/kz5K7iw6tnUqHlz7m" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Fontaneria INO" class="card-img-top" height="240" src="/logos/FONTANERIA INO_page-0001.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Fontaneria INO</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://www.instagram.com/fontaneria_almussafes/" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Hervás Gimenez" class="card-img-top" height="240" src="/logos/Hervás Gimenez_page-0001.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Hervás Gimenez</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/MUZhX5ERIonrDXgcC" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Forn Santacruz" class="card-img-top" height="240" src="/logos/logo forn santacruz _page-0001.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Forn Santacruz</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/rryy0PUeEcpw2J0UF" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Inelectric" class="card-img-top" height="240" src="/logos/LOGO INELECTRIC_page-0001.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Inelectric</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/GBlUe9Vs7HvELtLXr" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Solopizza" class="card-img-top" height="240" src="/logos/Logo solopizza_page-0001.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Solopizza</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/pB7o7bfGvXMGaN85R" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Medicser" class="card-img-top" height="240" src="/logos/Medicser_page-0001.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Medicser</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/cYXRXxwkRdrzDBKFr" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Y yo con estos pelos" class="card-img-top" height="240" src="/logos/y yo con estos pelos.webp"/>
+<div class="card-body">
+<h5 class="card-title">Y yo con estos pelos</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/TDZkAk3kjaroYqXrP" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+<div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
+<img alt="Los Zapatos de Lara" class="card-img-top" height="240" src="/logos/zapatos de lara_page-0001.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Los Zapatos de Lara</h5>
+<a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/EUo6GrY9gWI40G0SA" target="_blank">
+<i class="fa-solid fa-shop me-1"></i> Visitar
+        </a>
+</div>
+</div></div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselTots" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselTots" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
 
-          <div class="carousel-item active">
-            <div class="carousel-card-wrap">
-              <div class="card specific-w-300 mw-100 mx-auto">
-                <img src="logos/Bar Hungria.jpg" class="card-img-top" alt="Bar Hungría" height="240">
-                <div class="card-body">
-                  <h5 class="card-title">Bar Hungría</h5>
-                  <p class="card-text fs-6 text-muted">Esmorzars en el moment</p>
-                  <a href="#" target="_blank" class="stretched-link btn btn-success btn-lg w-100 mt-2">
-                    <i class="fa-solid fa-shop me-1"></i> Visitar
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+</section>
 
-          <div class="carousel-item">
-            <div class="carousel-card-wrap">
-              <div class="card specific-w-300 mw-100 mx-auto">
-                <img src="logos/Forn Rosa.jpg" class="card-img-top" alt="Forn Rosa" height="240">
-                <div class="card-body">
-                  <h5 class="card-title">Forn Rosa</h5>
-                  <p class="card-text fs-6 text-muted">Forn i pastisseria</p>
-                  <a href="#" target="_blank" class="stretched-link btn btn-success btn-lg w-100 mt-2">
-                    <i class="fa-solid fa-shop me-1"></i> Visitar
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- ==== ALIMENTACIÓ I BARS ==== -->
+<section id="grid-alimentacio" class="grid-container">
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Bar Hungria.jpg" class="card-img-top" alt="Bar Hungría">
+      <div class="card-body"><h5 class="card-title">Bar Hungría</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Birras y tragones II.jpg" class="card-img-top" alt="Birras y Tragones II">
+      <div class="card-body"><h5 class="card-title">Birras y Tragones II</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Carioca logo 2025.jpg" class="card-img-top" alt="Carioca">
+      <div class="card-body"><h5 class="card-title">Carioca</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/cook for you.jpg" class="card-img-top" alt="Cook For You">
+      <div class="card-body"><h5 class="card-title">Cook For You</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Forn Rosa.jpg" class="card-img-top" alt="Forn Rosa">
+      <div class="card-body"><h5 class="card-title">Forn Rosa</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/logo forn santacruz _page-0001.jpg" class="card-img-top" alt="Forn Santacruz">
+      <div class="card-body"><h5 class="card-title">Forn Santacruz</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Logo solopizza_page-0001.jpg" class="card-img-top" alt="Solopizza">
+      <div class="card-body"><h5 class="card-title">Solopizza</h5></div>
+    </div>
+  </div>
+</section>
 
-          <div class="carousel-item">
-            <div class="carousel-card-wrap">
-              <div class="card specific-w-300 mw-100 mx-auto">
-                <img src="logos/Alma centro estética.jpg" class="card-img-top" alt="Alma Centro Estética" height="240">
-                <div class="card-body">
-                  <h5 class="card-title">Alma Centro Estética</h5>
-                  <p class="card-text fs-6 text-muted">Estètica i benestar</p>
-                  <a href="#" target="_blank" class="stretched-link btn btn-success btn-lg w-100 mt-2">
-                    <i class="fa-solid fa-shop me-1"></i> Visitar
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- ==== ESTÈTICA I SALUT ==== -->
+<section id="grid-estetica" class="grid-container">
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Alma centro estética.jpg" class="card-img-top" alt="Alma Centro Estética">
+      <div class="card-body"><h5 class="card-title">Alma Centro Estética</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Clínica villalba II.png" class="card-img-top" alt="Clínica Villalba II">
+      <div class="card-body"><h5 class="card-title">Clínica Villalba II</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/CLINICA DENTAL Lucia Soler LOGO (1)_page-0002.jpg" class="card-img-top" alt="Clinica Dental Lucia Soler">
+      <div class="card-body"><h5 class="card-title">Clinica Dental Lucia Soler</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Farmacia Aparici.jpeg" class="card-img-top" alt="Farmacia Aparici">
+      <div class="card-body"><h5 class="card-title">Farmacia Aparici</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Farmacia Sebastián.png" class="card-img-top" alt="Farmacia Sebastián">
+      <div class="card-body"><h5 class="card-title">Farmacia Sebastián</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Medicser_page-0001.jpg" class="card-img-top" alt="Medicser">
+      <div class="card-body"><h5 class="card-title">Medicser</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/PArafarmacia Vero.jpg" class="card-img-top" alt="Parafarmacia Vero">
+      <div class="card-body"><h5 class="card-title">Parafarmacia Vero</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Silvia Saló.jpeg" class="card-img-top" alt="Silvia Saló">
+      <div class="card-body"><h5 class="card-title">Silvia Saló</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Logopèdia Andre 1.png" class="card-img-top" alt="Logopèdia Andre">
+      <div class="card-body"><h5 class="card-title">Logopèdia Andre</h5></div>
+    </div>
+  </div>
+</section>
 
-          <div class="carousel-item">
-            <div class="carousel-card-wrap">
-              <div class="card specific-w-300 mw-100 mx-auto">
-                <img src="logos/Valhala gym.jpg" class="card-img-top" alt="Valhala Gym" height="240">
-                <div class="card-body">
-                  <h5 class="card-title">Valhala Gym</h5>
-                  <p class="card-text fs-6 text-muted">Gimnàs i entrenament</p>
-                  <a href="#" target="_blank" class="stretched-link btn btn-success btn-lg w-100 mt-2">
-                    <i class="fa-solid fa-shop me-1"></i> Visitar
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- ==== ESPORT I BENESTAR ==== -->
+<section id="grid-esport" class="grid-container">
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/valhala gym.jpg" class="card-img-top" alt="Valhala Gym">
+      <div class="card-body"><h5 class="card-title">Valhala Gym</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/db method.jpg" class="card-img-top" alt="DB Method">
+      <div class="card-body"><h5 class="card-title">DB Method</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Cross atlética.jpg" class="card-img-top" alt="Cross Atlética">
+      <div class="card-body"><h5 class="card-title">Cross Atlética</h5></div>
+    </div>
+  </div>
+</section>
 
-        </div>
+<!-- ==== LLAR I SERVEIS ==== -->
+<section id="grid-llar" class="grid-container">
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Almucasa.jpg" class="card-img-top" alt="Almucasa">
+      <div class="card-body"><h5 class="card-title">Almucasa</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Fontaneria Salvador Lladosa.jpg" class="card-img-top" alt="Fontaneria Salvador Lladosa">
+      <div class="card-body"><h5 class="card-title">Fontaneria Salvador Lladosa</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/FONTANERIA INO_page-0001.jpg" class="card-img-top" alt="Fontaneria INO">
+      <div class="card-body"><h5 class="card-title">Fontaneria INO</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/CGA-LOGO-car-service.jpg" class="card-img-top" alt="CGA Car Service">
+      <div class="card-body"><h5 class="card-title">CGA Car Service</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Flow Camper Vans.jpg" class="card-img-top" alt="Flow Camper Vans">
+      <div class="card-body"><h5 class="card-title">Flow Camper Vans</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Inelectric.jpg" class="card-img-top" alt="Inelectric">
+      <div class="card-body"><h5 class="card-title">Inelectric</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/VMC.png" class="card-img-top" alt="VMC">
+      <div class="card-body"><h5 class="card-title">VMC</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/TOTOBRA Y ALQUILAME.png" class="card-img-top" alt="Totobra y Alquilame">
+      <div class="card-body"><h5 class="card-title">Totobra y Alquilame</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/inmobiliaria ferrús.png" class="card-img-top" alt="Inmobiliaria Ferrús">
+      <div class="card-body"><h5 class="card-title">Inmobiliaria Ferrús</h5></div>
+    </div>
+  </div>
+</section>
 
-        <!-- Controles -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#cardsCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#cardsCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Següent</span>
-        </button>
-      </div>
-    </section>
+<!-- ==== ALTRES ==== -->
+<section id="grid-altres" class="grid-container">
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/abel marrtí pvc.jpeg" class="card-img-top" alt="Abel Martí PVC">
+      <div class="card-body"><h5 class="card-title">Abel Martí PVC</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/Adrines.jpg" class="card-img-top" alt="Adrines">
+      <div class="card-body"><h5 class="card-title">Adrines</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/AlMontessori.jpg" class="card-img-top" alt="AlMontessori">
+      <div class="card-body"><h5 class="card-title">AlMontessori</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/judez joyeros.png" class="card-img-top" alt="Judez Joyeros">
+      <div class="card-body"><h5 class="card-title">Judez Joyeros</h5></div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card specific-w-300 mw-100 mx-auto">
+      <img src="logos/my prince craft.jpeg" class="card-img-top" alt="My Prince Craft">
+      <div class="card-body"><h5 class="card-title">My Prince Craft</h5></div>
+    </div>
+  </div>
+</section>
 
-    <!-- ==== GRID POR CATEGORÍAS ==== -->
-    <section id="grid-alimentacio" class="grid-container">
-      <div class="grid-item">
-        <div class="card specific-w-300 mw-100 mx-auto">
-          <img src="logos/Bar Hungria.jpg" class="card-img-top" alt="Bar Hungría" height="240">
-          <div class="card-body">
-            <h5 class="card-title">Bar Hungría</h5>
-            <p class="card-text fs-6 text-muted">Esmorzars en el moment</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="grid-item">
-        <div class="card specific-w-300 mw-100 mx-auto">
-          <img src="logos/Forn Rosa.jpg" class="card-img-top" alt="Forn Rosa" height="240">
-          <div class="card-body">
-            <h5 class="card-title">Forn Rosa</h5>
-            <p class="card-text fs-6 text-muted">Forn i pastisseria</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="grid-estetica" class="grid-container">
-      <div class="grid-item">
-        <div class="card specific-w-300 mw-100 mx-auto">
-          <img src="logos/Alma centro estética.jpg" class="card-img-top" alt="Alma Centro Estética" height="240">
-          <div class="card-body">
-            <h5 class="card-title">Alma Centro Estética</h5>
-            <p class="card-text fs-6 text-muted">Estètica i benestar</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="grid-esport" class="grid-container">
-      <div class="grid-item">
-        <div class="card specific-w-300 mw-100 mx-auto">
-          <img src="logos/Valhala gym.jpg" class="card-img-top" alt="Valhala Gym" height="240">
-          <div class="card-body">
-            <h5 class="card-title">Valhala Gym</h5>
-            <p class="card-text fs-6 text-muted">Gimnàs i entrenament</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="grid-llar" class="grid-container">
-      <p class="text-muted">Encara no hi ha comerços en aquesta categoria.</p>
-    </section>
-
-    <section id="grid-altres" class="grid-container">
-      <p class="text-muted">Encara no hi ha comerços en aquesta categoria.</p>
-    </section>
 
   </main>
 

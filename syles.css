@@ -625,4 +625,163 @@
                 transform: translateY(0);
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             }
+
+            /* ==== CARD ==== */
+.specific-w-300 { 
+    width: 300px; 
+}
+.mw-100 { 
+    max-width: 100%; 
+}
+.carousel-card-wrap { 
+    display: flex; 
+    justify-content: center; 
+    padding: 2rem 0; 
+}
+.card-img-top { 
+    object-fit: cover; 
+    width: 100%; 
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-size: 20px 20px;
+}
+
+/* ==== GRID ==== */
+.grid-container {
+    display: none; /* Mostrar con JS cuando se filtre */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.grid-item {
+    text-align: center;
+}
+.active-category {
+    background-color: #0d6efd;
+    color: white !important;
+}
+
+/* ==== GRID DE COMERCIOS ==== */
+.comercios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.comercio-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+.comercio-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain; /* Mantiene proporción sin recortar */
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+}
+
+.comercio-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border-color: #007bff;
+}
+
+.comercio-name {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #343a40;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.comercio-item:hover .comercio-name {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -10px);
+}
+
+.visit-btn {
+    display: none;
+    margin-top: 8px;
+    padding: 6px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+}
+
+.comercio-item.active .visit-btn {
+    display: block;
+}
+
+.comercio-item.active .comercio-logo {
+    border-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+/* ==== CARDS PARA GRID ==== */
+.grid-container {
+    display: none; /* Mostrar con JS cuando se filtre */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+/* Uniformiza altura de cards */
+.grid-item .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px; /* altura uniforme */
+}
+
+.grid-item .card-img-top {
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* ==== BOTONES DE CATEGORÍA ==== */
+.active-category {
+    background-color: #0d6efd;
+    color: white !important;
+}
+
         }

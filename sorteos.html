@@ -74,9 +74,9 @@
                     </div>
 
                     <!-- Enlace a vídeo -->
-                    <a href="https://www.instagram.com/p/EXEMPLE/" target="_blank" class="btn btn-primary mt-2">
+                    <button class="btn btn-primary mt-2" onclick="openVideoModal('Vídeo_1.mov')">
                         🎥 Veure vídeo del sorteig
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -95,9 +95,6 @@
                     </div>
 
                     <!-- Enlace al video del sorteo -->
-                    <a href="https://www.instagram.com/p/EXEMPLE2/" target="_blank" class="btn btn-secondary mt-2 disabled" aria-disabled="true">
-                        🎥 Vídeo disponible pròximament
-                    </a>
                 </div>
             </div>
             
@@ -109,7 +106,12 @@
         <span class="close-modal" id="closeModal">&times;</span>
         <img class="modal-content" id="modalImage" src="" alt="Cartel ampliat">
     </div>
-
+    <div id="videoModal" class="image-modal">
+        <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+        <video id="modalVideo" controls style="max-width: 90%; max-height: 90vh;">
+            <source src="" type="video/mp4">
+        </video>
+    </div>
     <!-- ===== SCRIPTS ===== -->
     <script src="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/js/halfmoon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -133,6 +135,21 @@
             if (e.key === 'Escape') modal.classList.remove('active');
         });
     </script>
+    <script>
+    function openVideoModal(videoSrc) {
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('modalVideo');
+        modal.classList.add('active');
+        video.querySelector('source').src = videoSrc;
+        video.load();
+    }
 
+    function closeVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('modalVideo');
+        modal.classList.remove('active');
+        video.pause();
+    }
+    </script>
 </body>
 </html>

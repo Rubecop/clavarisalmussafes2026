@@ -16,18 +16,28 @@
 
   <style>
 /* ==== CARD ==== */
-.specific-w-300 { width: 300px; }
-.mw-100 { max-width: 100%; }
-.carousel-card-wrap { display: flex; justify-content: center; padding: 2rem 0; }
-.card-img-top { object-fit: cover; width: 100%; height: 150px; border-radius: 8px; }
+.specific-w-300 { width: 500px; height: 400px;}
+.mw-100 { max-width: 100%; margin-top: 35px; }
+.carr
+.carousel-card-wrap { display: flex; justify-content: center; padding: 2rem 0;}
+.card-img-top { object-fit: cover; width: 100%; height: 250px; border-radius: 8px; }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(0,0,0,0.35);
+    background-color: rgb(0, 0, 0);
     border-radius: 50%;
     width: 48px;
     height: 48px;
-    background-size: 20px 20px;
+    background-size: 10px 10px;
 }
+.dropdown {
+ padding-top: 25px;
+}
+
+.card 
+{
+  border : 5px solid #5F0F40;
+}
+
 
 @media (max-width: 420px) {
     .specific-w-300 { width: 90%; }
@@ -71,6 +81,53 @@
 .active-category {
     background-color: #0d6efd;
     color: white !important;
+    opacity: 50%;
+}
+.comerciostext {
+  background: #5F0F40;
+  
+  color: #ffffff;
+  padding: 12px 25px;
+  width:max-content; /* ajusta al texto */
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 800;
+   display: inline-block; /* permite que el ancho se ajuste al contenido */
+}
+.comercioscolab {      
+  background: rgba(124, 128, 185, 0.342);
+  border-radius: 28px;
+  border: 3px solid #5F0F40;
+  opacity: 100%;
+  margin-bottom: 3.8rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: #fff;
+  width: 100%;
+  padding: 60px 0;
+  margin: 0;
+}
+.comercioscolab .row {
+  justify-content: center !important;
+  text-align: center;
+}
+
+.comercioscolab .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.comercioscolab .dropdown {
+  width: 100%;
+  max-width: 300px; /* evita que se extienda demasiado */
+}
+.btn btn-outline-secondary m-1{
+  color: yellow;
+  color: #fff;
+  width: 100%;
+  padding: 60px 0;
+  margin: 0;
 }
 
   </style>
@@ -107,22 +164,31 @@
   </header>
 
   <!-- ===== MAIN ===== -->
-  <main class="container my-5 text-center">
+  <main class="container my-5">
+     <section class="comercioscolab text-white py-5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h2 class="comerciostext">🛍️ Comerços col·laboradors</h2>
 
-    <h2>🛍️ Comerços col·laboradors</h2>
-
-    <!-- Botones de categorías -->
-    <div class="btn-group mt-3 flex-wrap">
-      <button class="btn btn-secondary m-1 active-category" data-category="tots">Tots</button>
-      <button class="btn btn-outline-secondary m-1" data-category="alimentacio">🥩 Alimentació i bars</button>
-      <button class="btn btn-outline-secondary m-1" data-category="estetica">💇 Estètica i salut</button>
-      <button class="btn btn-outline-secondary m-1" data-category="esport">🏋️ Esport i benestar</button>
-      <button class="btn btn-outline-secondary m-1" data-category="llar">🏠 Llar i serveis</button>
-      <button class="btn btn-outline-secondary m-1" data-category="altres">🧰 Altres comerços</button>
+                <div class="dropdown text-md-start text-center">
+                  <button class="btn btn-light dropdown-toggle w-100 fw-semibold" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Selecciona categoria
+                  </button>
+                  <ul class="dropdown-menu w-100 mt-2 " aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item active-category" href="#" data-category="tots">Tots</a></li>
+                    <li><a class="dropdown-item" href="#" data-category="alimentacio">🥩 Alimentació i bars</a></li>
+                    <li><a class="dropdown-item" href="#" data-category="estetica">💇 Estètica i salut</a></li>
+                    <li><a class="dropdown-item" href="#" data-category="esport">🏋️ Esport i benestar</a></li>
+                    <li><a class="dropdown-item" href="#" data-category="llar">🏠 Llar i serveis</a></li>
+                    <li><a class="dropdown-item" href="#" data-category="altres">🧰 Altres comerços</a></li>
+                  </ul>
+                </div>
+              </div>
     </div>
-
     <!-- ==== CARRUSEL DE CARDS ==== -->
- <section id="carousel-section">
+<section id="carousel-section">
+
 <div id="carouselTots" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active"><div class="card specific-w-300 mw-100 mx-auto">
@@ -132,6 +198,7 @@
 <a class="stretched-link btn btn-success btn-lg w-100 mt-2" href="https://share.google/D99v8Kvyv6uDvwRPn" target="_blank">
 <i class="fa-solid fa-shop me-1"></i> Visitar
         </a>
+
 </div>
 </div></div>
 <div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
@@ -143,6 +210,7 @@
         </a>
 </div>
 </div></div>
+
 <div class="carousel-item"><div class="card specific-w-300 mw-100 mx-auto">
 <img alt="Alma Centro Estética" class="card-img-top" height="240" src="/logos/Alma centro estética.jpg"/>
 <div class="card-body">
@@ -556,7 +624,7 @@
 <section id="grid-alimentacio" class="grid-container">
   <div class="grid-item">
     <div class="card specific-w-300 mw-100 mx-auto">
-      <img src="logos/Bar Hungria.jpg" class="card-img-top" alt="Bar Hungría">
+      <img alt="Bar Hungría" class="card-img-top" height="240" src="/logos/Bar Hungria.jpg"/>
       <div class="card-body"><h5 class="card-title">Bar Hungría</h5></div>
     </div>
   </div>
@@ -712,7 +780,7 @@
   </div>
   <div class="grid-item">
     <div class="card specific-w-300 mw-100 mx-auto">
-      <img src="logos/Inelectric.jpg" class="card-img-top" alt="Inelectric">
+      <img src="logos/LOGO INELECTRIC_page-0001.jpg" class="card-img-top" alt="Inelectric">
       <div class="card-body"><h5 class="card-title">Inelectric</h5></div>
     </div>
   </div>

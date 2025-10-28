@@ -11,57 +11,81 @@
     <link rel="stylesheet" href="syles.css">
     <style>
         .comerciostext {
-        background: #5F0F40;
-        
-        color: #ffffff;
-        padding: 12px 25px;
-        width:max-content; /* ajusta al texto */
-        text-align: center;
-        border-radius: 8px;
-        font-weight: 800;
-        display: inline-block; /* permite que el ancho se ajuste al contenido */
-        }
-        .comercioscolab {      
-        background: rgba(124, 128, 185, 0.342);
-        border-radius: 28px;
-        border: 3px solid #5F0F40;
-        opacity: 100%;
-        margin-bottom: 3.8rem;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        color: #fff;
-        width: 100%;
-        padding: 60px 0;
-        margin: 0;
-        }
-        .comercioscolab .row {
-        justify-content: center !important;
-        text-align: center;
-        }
+    background: #5F0F40;
+    
+    color: #ffffff;
+    padding: 12px 25px;
+    width:max-content; /* ajusta al texto */
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 800;
+    display: inline-block; /* permite que el ancho se ajuste al contenido */
+    }
+    .comercioscolab {      
+    background: rgba(124, 128, 185, 0.342);
+    border-radius: 28px;
+    border: 3px solid #5F0F40;
+    opacity: 100%;
+    margin-bottom: 3.8rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    color: #fff;
+    width: 100%;
+    padding: 60px 0;
+    margin: 0;
+    }
+    .comercioscolab .row {
+    justify-content: center !important;
+    text-align: center;
+    }
 
-        .comercioscolab .col-md-4 {
+    .comercioscolab .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .comercioscolab .dropdown {
+    width: 100%;
+    max-width: 300px; /* evita que se extienda demasiado */
+    }
+    .cartita{
+        border: 4px solid #5F0F40;
+        border-radius: 13px;
+    }
+    
+    /* Corrección para centrar modales */
+    .modal-dialog {
+        display: flex;
+        align-items: center;
+        min-height: calc(100% - 1rem);
+    }
+    
+    .modal-dialog-centered {
+        display: flex;
+        align-items: center;
+        min-height: calc(100vh - 1rem);
+    }
+    
+    .modal-body {
+        max-height: 80vh;
+        overflow-y: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        }
+        padding: 2rem;
+    }
 
-        .comercioscolab .dropdown {
-        width: 100%;
-        max-width: 300px; /* evita que se extienda demasiado */
-        }
-        .cartita{
-            border: 4px solid #5F0F40;
-            border-radius: 13px;
-        }
-        .modal-body {
-        max-height: 80vh; /* 80% del alto visible */
-        overflow-y: auto; /* Aparece scroll si es necesario */
-        }
-
-        .modal-body img {
+    .modal-body img {
         max-width: 100%;
         max-height: 70vh;
-        }
+        object-fit: contain;
+    }
+    
+    .modal-content {
+        margin: auto;
+    }
     </style>
 </head>
 <body>

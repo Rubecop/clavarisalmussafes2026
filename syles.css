@@ -383,8 +383,8 @@
         }
 
         .comercio-logo {
-            width: 85px;
-            height: 85px;
+            width: 95px;
+            height: 95px;
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid #ddd;
@@ -394,14 +394,14 @@
         }
         
         .comercio-logo2 {
-            width: 85px;
-            height: 85px;
+            width: 95px;
+            height: 95px;
             object-fit: scale-down; /* Escala sin recortar pero llena más espacio */
             object-position: center;
             border-radius: 50%;
             border: 1px solid #ddd;
             background-color: #fff;
-            padding: 3px; /* Espacio respiración */
+            padding: 2px; /* Espacio respiración */
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
             cursor: pointer;
             box-sizing: border-box; /* Incluye padding en el tamaño */

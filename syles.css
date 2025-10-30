@@ -96,8 +96,8 @@
         }
 
         .pumpkin-1 {
-            top: 20px;
-            left: 45%;
+            top: 0px;
+            left: 44%;
             transform: rotate(-25deg);
             animation-delay: 0.5s;
         }
@@ -120,21 +120,21 @@
         .pumpkin-4 {
             top: 25px;
             right: 30%;
-            font-size: 2rem;
+            font-size: 3rem;
             transform: rotate(-10deg);
             animation-delay: 2.5s;
         }
         .pumpkin-5 {
-            top: 55px;
-            left: 12%;
+            top: 25px;
+            left: 15%;
             font-size: 3rem;
             transform: rotate(-15deg);
             animation-delay: 0s;
         }
 
         .pumpkin-6 {
-            top: 60px;
-            right: 15%;
+            top: 30px;
+            right: 17%;
             font-size: 3rem;
             transform: rotate(15deg);
             animation-delay: 1.5s;

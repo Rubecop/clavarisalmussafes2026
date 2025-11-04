@@ -1,28 +1,44 @@
-        body {
-            background: linear-gradient(360deg, #0F4C5C, #5F0F40);
-            font-family: 'Segoe UI', sans-serif;
-            color: #333;
-            position: relative;
-        }
+       body {
+    background: linear-gradient(
+        360deg,
+        #0F4C5C 0%,
+        rgba(200,230,255,0.16) 40%,
+        #001d3d 100%
+    );
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    position: relative;
+}
 
-        /* Patrón de fondo con calabazas y fantasmas */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.08;
-            z-index: 0;
-            pointer-events: none;
-            background-image: 
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="50" font-size="40">🎃</text></svg>'),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="50" font-size="35">👻</text></svg>');
-            background-size: 100px 100px, 120px 120px;
-            background-position: 0 0, 50px 50px;
-            background-repeat: repeat;
-        }
+/*  ------------------------------------------
+    fondo temático halloween — APAGADO
+    (no borrar, puede volver)
+----------------------------------------------
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+    background-image: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="50" font-size="40">🎃</text></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="50" font-size="35">👻</text></svg>');
+    background-size: 100px 100px, 120px 120px;
+    background-position: 0 0, 50px 50px;
+    background-repeat: repeat;
+}
+---------------------------------------------- */
+
+header, main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+
 
         /* Asegurar que el contenido esté sobre el patrón */
         header, main, footer {
@@ -44,12 +60,13 @@
             transform: none !important;
         }
 
-        header {
-            color: rgb(201, 147, 1);
-            overflow: visible;  /* Las calabazas pueden salir */
-            border: none;  /* Quitar el borde de aquí */
-            border-radius: 0;
-        }
+     header {
+    color: hsl(195 40% 38%);   /* azul petróleo saludable */
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+}
+
         .nav-buttons {
             display: flex;
             justify-content: center;
@@ -58,29 +75,31 @@
             flex-wrap: wrap;
             padding-bottom: 15px;
         }
-        .nav-btn {
-            background: linear-gradient(180deg, #FB8B24 0%, #FF6B00 100%);
-            color: #5F0F40;
-            font-weight: 1000;
-            font-size: 1.1rem;
-            padding: 12px 30px;
-            border: 2px solid #833b01;  /* ← CORRECTO: grosor + estilo + color */
-            border-radius: 15px;
-            background-color: #fff;
-            cursor: pointer;
-            position: relative;
-            text-shadow: 1px 1px 2px rgba(251, 255, 0, 0.5);
-            transition: all 0.3s ease;
-            letter-spacing: 0.8px;
-            min-width: 350px;
-            box-shadow: 0 3px 6px rgba(20, 20, 20, 0.2);
-        }
-        .nav-btn:hover {
-            background: linear-gradient(180deg, #c40327 0%, #a00220 100%);
-            color: #FFD700;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-        }
+       .nav-btn {
+    background: linear-gradient(180deg, hsl(195 55% 62%) 0%, hsl(195 50% 54%) 100%);
+    color: hsl(215 60% 18%);
+    font-weight: 1000;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border: 2px solid hsl(195 50% 40%);
+    border-radius: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    text-shadow: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.8px;
+    min-width: 350px;
+    box-shadow: 0 3px 6px rgba(20, 20, 20, 0.2);
+}
+
+.nav-btn:hover {
+    background: linear-gradient(180deg, hsl(195 60% 66%) 0%, hsl(195 52% 58%) 100%);
+    color: hsl(215 70% 14%);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
 
         .nav-btn:active {
             transform: translateY(0);
@@ -157,7 +176,7 @@
         .header-title {
             font-size: 3rem;
             font-weight: 700;
-            color: #0F4C5C;
+            color: #FFFF;
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
             text-align: center;
         }
@@ -188,8 +207,8 @@
         .card {
             border-radius: 10px;
             transition: transform 0.3s;
-            background: linear-gradient(270deg, #c40327, #FB8B24);
-            color: #5F0F40;
+            background: linear-gradient(270deg, #0b5ed7, #0d6efd);
+            color: #001d3d;
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
         }
 
@@ -211,7 +230,7 @@
         footer {
             text-align: center;
             padding: 1.5rem;
-            background: linear-gradient(270deg, #c40327, #FB8B24);
+            background: linear-gradient(270deg, #0b5ed7, #0d6efd);
             color: #004aad;
             margin-top: 2rem;
         }
@@ -225,7 +244,7 @@
 
         .event-card {
             background: #ffb8c5;
-            border-left: 6px solid #9A031E;
+            border-left: 6px solid #023e8a;
             border-radius: 8px;
             padding: 1rem 1.2rem;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -233,7 +252,7 @@
         }
 
         .event-card h4 {
-            color: #9A031E;
+            color: #023e8a;
             margin-bottom: 0.3rem;
         }
 
@@ -352,7 +371,7 @@
 
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            background-color: #FB8B24;
+            background-color: #0d6efd;
             border-radius: 50%;
             padding: 10px;
         }
@@ -620,8 +639,8 @@
             }
     
             .nav-btn {
-                background: linear-gradient(180deg, #FB8B24 0%, #FF6B00 100%);
-                color: #5F0F40;
+                background: linear-gradient(180deg, #0d6efd 0%, #0a58ca 100%);
+                color: #001d3d;
                 font-weight: 700;
                 font-size: 1.1rem;
                 padding: 12px 30px;
@@ -638,7 +657,7 @@
             }
     
             .nav-btn:hover {
-                background: linear-gradient(180deg, #c40327 0%, #a00220 100%);
+                background: linear-gradient(180deg, #0b5ed7 0%, #084298 100%);
                 color: #FFD700;
                 transform: translateY(-2px);
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);

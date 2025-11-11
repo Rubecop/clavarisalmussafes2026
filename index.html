@@ -56,6 +56,12 @@
 </head>
 <body>
 <header>
+    <span class="header-pumpkin pumpkin-1" style="--rotate: -25deg;">☃️​</span>
+    <span class="header-pumpkin pumpkin-2" style="--rotate: 20deg;">☃️​</span>
+    <span class="header-pumpkin pumpkin-3" style="--rotate: 10deg;">🎅🏼​</span>
+    <span class="header-pumpkin pumpkin-4" style="--rotate: -10deg;">☃️​</span>
+    <span class="header-pumpkin pumpkin-5" style="--rotate: -15deg;">🎅🏼​</span>
+    <span class="header-pumpkin pumpkin-6" style="--rotate: 15deg;">🎅🏼</span>
     <div class = "header-wrapper">    
             
             <div class="card shadow-sm border-0 p-3">
@@ -125,6 +131,9 @@
                             <div class="carousel-item">
                                 <img src="imagenes/c5.jpeg" class="d-block w-100 rounded" alt="">
                             </div>
+                            <div class="carousel-item">
+                                <img src="imagenes/c6.jfif" class="d-block w-100 rounded" alt="">
+                            </div>
                         </div>
 
                         <!-- Controles -->
@@ -184,7 +193,7 @@
                             <p class="event-date">📅 8 de Novembre de 2025 a les 18:30</p>
                             <p class="event-place">Enmanuel</p>
                             <p class="event-description">Festa y tardeo</p>
-                            <img src="enma festa.jpg" alt="Cartel Enma" class="event-poster" id="Enmanuel cartel ">
+                            <img src="enma festa.jpg" alt="Cartel Enma" class="event-poster" id="Poster">
                             <p class="poster-hint">👆 Clic para ampliar</p>
                         </div> 
                     </div>
@@ -196,11 +205,23 @@
         <!-- Rifas & Loteries -->
         <section class="col-12 col-md-4">
             <div class="card shadow-sm border-0 h-100">
-                <div class="card-body text-center">
-                    <h2 class="card-title mb-3">Rifes & Loteries</h2>
-                    <img src="rifa18-10.jpeg" alt="Loteria" class="img-fluid rounded shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-3">Rifes & Loteries</h2>
+                    <div class="event-list">
+                        <div class="event-card">
+                            <h4>Loteria de Nadal</h4>
+                            <img src="LoteriaNavidad.jpeg" alt="Cartel Loteria" class="event-poster" id="Poster1">
+                            <p class="poster-hint">👆 Clic para ampliar</p>
+                        </div> 
+                        <div class="event-card">
+                            <h4>Loteria del Niño</h4>
+                            <img src="LoteriaElNino.jpeg" alt="Cartel Loteria" class="event-poster" id="Poster1">
+                            <p class="poster-hint">👆 Clic para ampliar</p>
+                        </div> 
+                    </div>
                 </div>
             </div>
+            
         </section>
     </div>
 </main>
@@ -741,21 +762,20 @@
 <!-- ✅ Halfmoon JS (para los carruseles) -->
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/js/halfmoon.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
     // ========== POPUP DE IMAGEN ==========
-    const poster = document.getElementById('halloweenPoster');
+    const posters = document.querySelectorAll('.event-poster'); // Usa una clase común
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.getElementById('closeModal');
 
-    // Abrir modal al hacer clic en la imagen
-    if (poster) {
+    // Abrir modal al hacer clic en cualquier poster
+    posters.forEach(poster => {
         poster.addEventListener('click', function() {
             modal.classList.add('active');
             modalImg.src = this.src;
         });
-    }
+    });
 
     // Cerrar modal con el botón X
     if (closeBtn) {
@@ -763,6 +783,14 @@
             modal.classList.remove('active');
         });
     }
+
+    // Cerrar modal al hacer clic fuera de la imagen
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+
     // Cerrar con la tecla ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal && modal.classList.contains('active')) {

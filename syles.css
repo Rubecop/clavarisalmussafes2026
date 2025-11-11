@@ -561,7 +561,7 @@ header, main, footer {
                 line-height: 1.2;
                 text-align: center !important;
                 margin: 0.5rem 0;
-                color: #003b8e;
+                color: #D7D7D9;;
                 width: 100%;
             }
             header::before,
@@ -654,7 +654,7 @@ header, main, footer {
     
             .nav-btn {
                 background: linear-gradient(180deg, #730606 0%, #730606 100%);
-                color: #001d3d;
+                color: #D7D7D9;
                 font-weight: 700;
                 font-size: 1.1rem;
                 padding: 12px 30px;
@@ -668,13 +668,6 @@ header, main, footer {
                 letter-spacing: 0.5px;
                 min-width: 120px;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-            }
-    
-            .nav-btn:hover {
-                background: linear-gradient(180deg, #0b5ed7 0%, #084298 100%);
-                color: #FFD700;
-                transform: translateY(-2px);
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
             }
     
             .nav-btn:active {

@@ -35,18 +35,13 @@ body::before {
             
         }
         .header-wrapper {
-            border-radius: 15px;
             text-align: center;
-            overflow: hidden;  /* Contiene todo dentro */
             border-bottom: 2px solid #D7D7D9;
-                border-left: 2px solid #D7D7D9;
-                    border-right: 2px solid #D7D7D9;
+            background: #A60808;
+            height: 100%;
         }
 
-        header .card-body {
-            padding: 0.1rem 5rem !important; /* menos espacio vertical */
-            gap: 0.2rem; /* mantiene separación ligera entre elementos */
-        }
+
 
         header .card:hover {
             transform: none !important;
@@ -56,7 +51,7 @@ body::before {
             display: flex;
             justify-content: center;
             gap: 95px;
-            margin-top: -120px;
+            margin-top: -180px;
             flex-wrap: wrap;
             padding-bottom: 15px;
         }
@@ -170,7 +165,6 @@ body::before {
         .header-left {
             justify-self: start;
             margin-left: 55px;
-             margin-top: 15px;
         }
 
         .header-center {
@@ -184,7 +178,7 @@ body::before {
         header .logo {
             height: 180px; /* ajusta si quieres un logo un poco más pequeño */
             width: auto;
-
+            margin-top: 10px;
         }
 
         .social-icon {

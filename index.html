@@ -53,6 +53,197 @@
       ]
     }
     </script>
+        <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .footer-section {
+            background-color: white;
+            border-radius: 10px;
+        }
+        
+        #comerciosCarousel {
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .comercios-carousel-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            min-height: 150px;
+        }
+        
+        .comercio-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 80px;
+        }
+        
+        .comercio-item:hover {
+            transform: scale(1.2);
+        }
+
+        
+        .comercio-item:hover .comercio-logo,
+        .comercio-item:hover .comercio-logo2 {
+            border-color: #007bff;
+            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+        }
+        
+        .comercio-name {
+            font-size: 11px;
+            text-align: center;
+            color: #ffffff;
+            max-width: 80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+        
+        .visit-btn {
+            display: none;
+            position: absolute;
+            top: 50px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .comercio-item.active .visit-btn {
+            display: block;
+        }
+        
+        .visit-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        
+        .footerText h6 {
+            font-size: 1.3rem;
+            color: #D7D7D9;
+            font-weight: 600;
+        }
+        
+        .carousel-indicators {
+            margin-bottom: -23px;
+        }
+        
+        .carousel-indicators button {
+              width: 100px;
+        }
+        #comerciosCarousel .carousel-control-prev,
+        #comerciosCarousel .carousel-control-next {
+            width: 60px;               /* Separa más las flechas del contenido */
+            height: 60px;
+        }
+
+        #comerciosCarousel .carousel-control-prev-icon,
+        #comerciosCarousel .carousel-control-next-icon {
+            background-color: rgba(255, 255, 255, 0.87); /* Color azul Bootstrap */
+            border-radius: 50%;
+            padding: 15px;
+            filter: invert(1) brightness(2); /* Flecha blanca */
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Hover más destacado */
+        #comerciosCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+        #comerciosCarousel .carousel-control-next:hover .carousel-control-next-icon {
+            background-color: rgb(255, 255, 255);
+            transform: scale(1.2);
+            transition: 0.2s ease;
+        }
+
+        /* Mejor separación vertical respecto a los logos */
+        #comerciosCarousel .carousel-control-prev,
+        #comerciosCarousel .carousel-control-next {
+            top:40%; /* Baja un poco las flechas */
+        }
+        
+        @media (max-width: 768px) {
+            .comercios-carousel-grid {
+                gap: 15px;
+                padding: 20px 50px;
+            }
+            
+            .comercio-item {
+                width: 65px;
+            }
+            
+            .comercio-logo, .comercio-logo2 {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .comercio-name {
+                font-size: 10px;
+                max-width: 65px;
+            }
+            
+            .visit-btn {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .comercios-carousel-grid {
+                gap: 10px;
+
+            }
+            
+            .comercio-item {
+                width: 20px;
+            }
+            
+            .comercio-logo, .comercio-logo2 {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .comercio-name {
+                font-size: 9px;
+                max-width: 55px;
+            }
+            #comerciosCarousel .carousel-control-prev,
+            #comerciosCarousel .carousel-control-next {
+                width: 40px;               /* Separa más las flechas del contenido */
+            }
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -226,6 +417,593 @@
     </div>
 </main>
 
+
+<footer class="footer-section text-center mt-5 py-4">
+    <div class="footerText mb-3">
+        <h6><p>Comerços que col·laboren:</p></h6>
+    </div>
+    
+    <div id="comerciosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
+      <div class="carousel-indicators">
+            <button type="button" data-bs-target="#comerciosCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#comerciosCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#comerciosCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#comerciosCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#comerciosCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#comerciosCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#comerciosCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+             <button class="carousel-control-prev" type="button" data-bs-target="#comerciosCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#comerciosCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+
+            <div class="carousel-item active">
+                <div class="comercios-carousel-grid">
+                    <div class="comercio-item" data-url="https://share.google/D99v8Kvyv6uDvwRPn">
+                        <img src="/logos/abel marrtí pvc.jpeg" alt="Abel Martí PVC" class="comercio-logo">
+                        <span class="comercio-name">Abel Martí PVC</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/eh1yCGA6DgamzeEas">
+                        <img src="/logos/adrines.jpg" alt="Adrines" class="comercio-logo">
+                        <span class="comercio-name">Adrines</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/AV2U32TOruoXDIGGB">
+                        <img src="/logos/Alma centro estética.jpg" alt="Alma Centro Estética" class="comercio-logo">
+                        <span class="comercio-name">Alma Centro Estética</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://www.instagram.com/_al.montessori/">
+                        <img src="/logos/AlMontessori.jpg" alt="AlMontessori" class="comercio-logo">
+                        <span class="comercio-name">AlMontessori</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/7gx2JLWLvFvxUr4zt">
+                        <img src="/logos/Almucasa.jpg" alt="Almucasa" class="comercio-logo">
+                        <span class="comercio-name">Almucasa</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/CcoBIEUmCP0Om5r9U">
+                        <img src="/logos/AreteIdiomes.png" alt="AreteIdiomes" class="comercio-logo2">
+                        <span class="comercio-name">Arete Idiomes</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/XYF5dxqsjoh7cpxbs">
+                        <img src="/logos/AtmosferaSport.png" alt="Atmosfera Sport" class="comercio-logo2">
+                        <span class="comercio-name">Atmosfera Sport</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/P6wBVveCLWvm1yHZD">
+                        <img src="/logos/avenida.png" alt="Avenida" class="comercio-logo">
+                        <span class="comercio-name">Avenida</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://www.instagram.com/barhungriaalmussafes/">
+                        <img src="/logos/Bar Hungria.jpg" alt="Bar Hungría" class="comercio-logo">
+                        <span class="comercio-name">Bar Hungría</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/Fb4xpxoxyICuoUEF3">
+                        <img src="/logos/Bar Meson.png" alt="Bar Meson" class="comercio-logo2">
+                        <span class="comercio-name">Bar Meson</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/PD6rqd7g2IocuhWAU">
+                        <img src="/logos/BarParque.png" alt="Bar Parque" class="comercio-logo">
+                        <span class="comercio-name">Bar Parque</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/Egec1iqff8SHlMObk">
+                        <img src="/logos/base.png" alt="Base" class="comercio-logo2">
+                        <span class="comercio-name">Base</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/CunEaM63SdAQmokHq">
+                        <img src="/logos/BellisimosKids.png" alt="Bellisimos Kids" class="comercio-logo">
+                        <span class="comercio-name">Bellisimos Kids</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/ugeeS6YSlgsBYRl7G">
+                        <img src="/logos/BellisolOpticos.png" alt="Bellisol Opticos" class="comercio-logo">
+                        <span class="comercio-name">Bellisol Opticos</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/DpvIBIo4g8AnJscDX">
+                        <img src="/logos/benestar.png" alt="Benestar" class="comercio-logo2">
+                        <span class="comercio-name">Benestar</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="comercios-carousel-grid">
+                    <div class="comercio-item" data-url="https://share.google/M3F6mUKg9dTIc6HRY">
+                        <img src="/logos/berna.png" alt="Peluqueria Berna" class="comercio-logo">
+                        <span class="comercio-name">Peluqueria Berna</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/0L4ahpu6IR5TvHRYG">
+                        <img src="/logos/Birras y tragones II.jpg" alt="Birras y Tragones II" class="comercio-logo">
+                        <span class="comercio-name">Birras y Tragones II</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/4qvJbHJIbOhB8Vel5">
+                        <img src="/logos/BonaireCerveseria.png" alt="Bonaire Cerveseria" class="comercio-logo2">
+                        <span class="comercio-name">Bonaire Cerveseria</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/X3zQCJqdJpMj18oKn">
+                        <img src="/logos/BouRoba.png" alt="Bou Roba" class="comercio-logo">
+                        <span class="comercio-name">Bou Roba</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/wLsUO2QpgdjTSHyXa">
+                        <img src="/logos/CafeteriaCentreCultural.png" alt="Cafeteria Centre Cultural" class="comercio-logo">
+                        <span class="comercio-name">Cafeteria Centre Cultural</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/6GANucsd18i6Zko4k">
+                        <img src="/logos/CambridgeCenterAlmussafes.jpg" alt="Cambridge Center" class="comercio-logo">
+                        <span class="comercio-name">Cambridge Center</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/OWAJwWXrXDV7dTHGl">
+                        <img src="/logos/Carioca logo 2025.jpg" alt="Carioca" class="comercio-logo">
+                        <span class="comercio-name">Carioca</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/L7fpLnmGiyEexI9jr">
+                        <img src="/logos/CasaAliciaAnnie.png" alt="Casa Alicia Annie" class="comercio-logo">
+                        <span class="comercio-name">Casa Alicia Annie</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/yN1pLfjvJuDmD6qxc">
+                        <img src="/logos/CGA-LOGO-car-service.jpg" alt="CGA Car Service" class="comercio-logo2">
+                        <span class="comercio-name">CGA Car Service</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/mozCLgPAWWc8F9U9h">
+                        <img src="/logos/clarel.png" alt="Clarel" class="comercio-logo">
+                        <span class="comercio-name">Clarel</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/t8ZQD0qOXApKzfZby">
+                        <img src="/logos/Clínica villalba II.png" alt="Clínica Villalba II" class="comercio-logo2">
+                        <span class="comercio-name">Clínica Villalba II</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/rnRNVZZsrwN0JhiID">
+                        <img src="/logos/Colaita.jpg" alt="Colaita" class="comercio-logo">
+                        <span class="comercio-name">Colaita</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/skkTxaylbeecHrmjy">
+                        <img src="/logos/cook for you.jpg" alt="Cook For You" class="comercio-logo">
+                        <span class="comercio-name">Cook For You</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/6AZ732MMJYJnSagCF">
+                        <img src="/logos/copisval.png" alt="Copisval" class="comercio-logo">
+                        <span class="comercio-name">Copisval</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/clF3f9ZkebF8ZCSMW">
+                        <img src="/logos/CopoviSL.png" alt="Copovi S.L." class="comercio-logo">
+                        <span class="comercio-name">Copovi S.L.</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- SLIDE 3 -->
+            <div class="carousel-item">
+                <div class="comercios-carousel-grid">
+                <div class="comercio-item" data-url="">
+                        <img src="/logos/cr3.png" alt="CR3" class="comercio-logo2">
+                        <span class="comercio-name">CR3</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/5HDOdBASGxkYEp0Gy">
+                        <img src="/logos/Cross atlética.jpg" alt="Cross Atlética" class="comercio-logo">
+                        <span class="comercio-name">Cross Atlética</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://almussafes.comercioscomunitatvalenciana.com/es/comercios/view/db-method-entrenador-personal">
+                        <img src="/logos/db method.jpg" alt="DB Method" class="comercio-logo">
+                        <span class="comercio-name">DB Method</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/RqBCGxn2RxX0Aj2uY">
+                        <img src="/logos/ElMinatRestaurant.png" alt="ElMinatRestaurant" class="comercio-logo2">
+                        <span class="comercio-name">El Minat Restaurant</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/hePuxCdH4RaN1emM2">
+                        <img src="/logos/ElMusical.png" alt="ElMusical" class="comercio-logo2">
+                        <span class="comercio-name">El Musical</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/KpRN7VZGFRj2uUpAk">
+                        <img src="/logos/ElSabater.png" alt="ElSabater" class="comercio-logo2">
+                        <span class="comercio-name">El Sabater</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/YjdOcALffw9Mgz2Vv">
+                        <img src="/logos/enjoy.png" alt="ENJOY" class="comercio-logo">
+                        <span class="comercio-name">Enjoy</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/KWpMSEh7ndMlPa19Q">
+                        <img src="/logos/Enmanuel.png" alt="Enmanuel" class="comercio-logo2">
+                        <span class="comercio-name">Enmanuel</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/lOmYOyYn1MWPa0JRu">
+                        <img src="/logos/EnriquePeluquero.png" alt="EnriquePeluquero" class="comercio-logo">
+                        <span class="comercio-name">Enrique Peluquero</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/NghMAAU8u1Bkfi3lE">
+                        <img src="/logos/EnvasesGirona.png" alt="EnvasesGirona" class="comercio-logo2">
+                        <span class="comercio-name">Envases Girona</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/HNCj8Sl3wh2khoxHP">
+                        <img src="/logos/ExcavacionesRibes.png" alt="ExcavacionesRibes" class="comercio-logo">
+                        <span class="comercio-name">Excavaciones Ribes</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/QqYSlini2mlTzpp0a">
+                        <img src="/logos/fante.png" alt="fante" class="comercio-logo">
+                        <span class="comercio-name">Fantë</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/3hKiVZC7C6fF0FXgL">
+                        <img src="/logos/Farmacia Aparici.jpeg" alt="Farmacia Aparici" class="comercio-logo">
+                        <span class="comercio-name">Farmacia Aparici</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/igUZgXayFuMMHhyQj">
+                        <img src="/logos/Farmacia Sebastián.png" alt="Farmacia Sebastián" class="comercio-logo2">
+                        <span class="comercio-name">Farmacia Sebastián</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/AAPTJwM1uFgXyLySa">
+                        <img src="/logos/FerreteriaSoria.png" alt="FerreteriaSoria" class="comercio-logo2">
+                        <span class="comercio-name">Ferreteria Soria</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                </div> 
+            </div>
+            <!-- SLIDE 4 -->
+            <div class="carousel-item">
+                <div class="comercios-carousel-grid">
+                <div class="comercio-item" data-url="https://share.google/0fKbsoahJQhOADUnT">
+                    <img src="/logos/FlorsIsabel.png" alt="FlorsIsabel" class="comercio-logo2">
+                    <span class="comercio-name">Flors Isabel</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/8bg0Xau4Xo7VXOPlV">
+                    <img src="/logos/flow camper vans.jpg" alt="Flow Camper Vans" class="comercio-logo">
+                    <span class="comercio-name">Flow Camper Vans</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/0b9yMWGbvYUx2b6R0">
+                    <img src="/logos/Fontaneria Salvador Lladosa.jpg" alt="Fontaneria Salvador Lladosa" class="comercio-logo">
+                    <span class="comercio-name">Fontaneria Salvador Lladosa</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://almussafes.comercioscomunitatvalenciana.com/va/comercios/view/forn-i-pastisseria-loles-i-ruben">
+                    <img src="/logos/Forn Loles y Ruben.png" alt="Forn Loles y Ruben" class="comercio-logo2">
+                    <span class="comercio-name">Forn Loles y Ruben</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/OIIqjZbopqCHQCeOi">
+                    <img src="/logos/Forn Rosa.jpg" alt="Forn Rosa" class="comercio-logo">
+                    <span class="comercio-name">Forn Rosa</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="http://galaxyeventos.eu/">
+                    <img src="/logos/GalaxyEventos.png" alt="GalaxyEventos" class="comercio-logo">
+                    <span class="comercio-name">Galaxy Eventos</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/I4BeFpJKQguTTl0jK">
+                    <img src="/logos/grafiquesMachi.png" alt="grafiquesMachi" class="comercio-logo">
+                    <span class="comercio-name">Grafiques Machi</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/0WoEJ29M2s85EpcTB">
+                    <img src="/logos/Hejuma.png" alt="Hejuma" class="comercio-logo2">
+                    <span class="comercio-name">Hejuma</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/7PO4YfuMmVxwE7SeQ">
+                    <img src="/logos/herboprats.png" alt="herboprats" class="comercio-logo">
+                    <span class="comercio-name">Herboprats</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/lLEIZlMhfp2SvIxXt">
+                    <img src="/logos/inmobiliaria ferrús.png" alt="Inmobiliaria Ferrús" class="comercio-logo">
+                    <span class="comercio-name">Inmobiliaria Ferrús</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/uSnZ2w90m8GSti8Yz">
+                    <img src="/logos/inusual.png" alt="inusual" class="comercio-logo">
+                    <span class="comercio-name">Inusual</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/6UNiiNAtHJuStMwec">
+                    <img src="/logos/jabayoga.png" alt="jabayoga" class="comercio-logo2">
+                    <span class="comercio-name">Jabayoga</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/l3K5C69IHNV6o355O">
+                    <img src="/logos/judez joyeros.png" alt="Judez Joyeros" class="comercio-logo">
+                    <span class="comercio-name">Judez Joyeros</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/FRqHH2wuVqHDa3fdE">
+                    <img src="/logos/La barberia fruits secs.jpg" alt="La Barberia Fruits Secs" class="comercio-logo2">
+                    <span class="comercio-name">La Barberia Fruits Secs</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/5QNrFc13wlu7knSBh">
+                    <img src="/logos/LaTerrasa.png" alt="LaTerrasa" class="comercio-logo2">
+                    <span class="comercio-name">La Terrasa</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                </div> 
+            </div>
+            <!-- SLIDE 5 -->
+            <div class="carousel-item">
+                <div class="comercios-carousel-grid">
+                <div class="comercio-item" data-url="https://share.google/I2MX3l9IN2EAw1AhV">
+                    <img src="/logos/LlarDelsJubilats.png" alt="LlarDelsJubilats" class="comercio-logo">
+                    <span class="comercio-name">Llar dels Jubilats</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/srou1cl8wPSoMSrQA">
+                    <img src="/logos/LluisaAutoescola.png" alt="LluisaAutoescola" class="comercio-logo">
+                    <span class="comercio-name">Lluisa Autoescola</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/08WlbXVjbHMEO2JC9">
+                    <img src="/logos/Logo Maviclim SLU.jpg" alt="Maviclim SLU" class="comercio-logo2">
+                    <span class="comercio-name">Maviclim SLU</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/IQrVcgyWeqruFCtoN">
+                    <img src="/logos/Logopèdia Andre 1.png" alt="Logopèdia Andre" class="comercio-logo">
+                    <span class="comercio-name">Logopèdia Andre</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/QHwk5kWUSkFkATcPC">
+                    <img src="/logos/LuluNails.png" alt="LuluNails" class="comercio-logo">
+                    <span class="comercio-name">Lulu Nails</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/ifTm60Lw7btGZmHaO">
+                    <img src="/logos/magenta.png" alt="magenta" class="comercio-logo">
+                    <span class="comercio-name">Magenta</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/XEv8YnIbCaG7OUKOY">
+                    <img src="/logos/MarcosRoda.png" alt="MarcosRoda" class="comercio-logo2">
+                    <span class="comercio-name">Marcos Roda</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/WhJxHwbBcVCaOM2sy">
+                    <img src="/logos/Maricarmen Sanz estetica.png" alt="Maricarmen Sanz estetica" class="comercio-logo2">
+                    <span class="comercio-name">Maricarmen Sanz Estetica</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/cYXRXxwkRdrzDBKFr">
+                    <img src="/logos/Medicser_page-0001.jpg" alt="Medicser" class="comercio-logo">
+                    <span class="comercio-name">Medicser</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="">
+                    <img src="/logos/MGTransformaciones.jpeg" alt="MGTransformaciones" class="comercio-logo">
+                    <span class="comercio-name">MGP Transformaciones</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/3QmFG8KD4Ikp4CaaR">
+                    <img src="/logos/MiSecretario.png" alt="MiSecretario" class="comercio-logo">
+                    <span class="comercio-name">Mi Secretario</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://www.instagram.com/myprincecraft/">
+                    <img src="/logos/my prince craft.jpeg" alt="My Prince Craft" class="comercio-logo">
+                    <span class="comercio-name">My Prince Craft</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/RMZDhXSn4wzYmx4H1">
+                    <img src="/logos/Norita.jpg" alt="Norita" class="comercio-logo">
+                    <span class="comercio-name">Norita</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/YT8QGDiQJfqxDPhnt">
+                    <img src="/logos/PArafarmacia Vero.jpg" alt="Parafarmacia Vero" class="comercio-logo">
+                    <span class="comercio-name">Parafarmacia Vero</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/PwdltdfYkpq6lnHlO">
+                    <img src="/logos/pinturas cuevas.png" alt="Pinturas Cuevas" class="comercio-logo2">
+                    <span class="comercio-name">Pinturas Cuevas</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                </div> 
+            </div>
+            <!-- SLIDE 6 -->
+            <div class="carousel-item">
+                <div class="comercios-carousel-grid">
+                    <div class="comercio-item" data-url="https://share.google/WXuVnZEmuymMhKlng">
+                        <img src="/logos/PolimarPark.png" alt="PolimarPark" class="comercio-logo2">
+                        <span class="comercio-name">Polimar Park</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/XvAWKqz2gkmGpmeJP">
+                        <img src="/logos/PymaSuministros.png" alt="PimaSuministros" class="comercio-logo2">
+                        <span class="comercio-name">Pima Suministros</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://riberanet.es/">
+                        <img src="/logos/riberanet.png" alt="riberanet" class="comercio-logo2">
+                        <span class="comercio-name">RiberaNet</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/hVzVeW0LRmgMB6YBz">
+                        <img src="/logos/sagalo.png" alt="sagalo" class="comercio-logo2">
+                        <span class="comercio-name">El Sagalo</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/IHFCwGtu5JFcMDCeU">
+                        <img src="/logos/Silvia Saló.jpeg" alt="Silvia Saló" class="comercio-logo">
+                        <span class="comercio-name">Silvia Saló</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/IRNarva5iTKeHryRq">
+                        <img src="/logos/stihl.png" alt="stihl" class="comercio-logo2">
+                        <span class="comercio-name">Stihl</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/7ztZVzQMUw0T52fl6">
+                        <img src="/logos/Telca Logo.jpg" alt="Telca" class="comercio-logo2"">
+                        <span class="comercio-name">Telca</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/pYF15xrKh0Ox9f20c">
+                        <img src="/logos/TOTOBRA Y ALQUILAME.png" alt="Totobra y Alquilame" class="comercio-logo">
+                        <span class="comercio-name">Totobra y Alquilame</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/PEZMB24vrnpGOGXAH">
+                        <img src="/logos/valhala gym.jpg" alt="Valhala Gym" class="comercio-logo">
+                        <span class="comercio-name">Valhala Gym</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/vLwehNCVIEq4pLE2a">
+                        <img src="/logos/VeterinariaOrdas.png" alt="VeterinariaOrdas" class="comercio-logo">
+                        <span class="comercio-name">Veterinaria Ordas</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/roWy4slQUBNpwOMlt">
+                        <img src="/logos/ViajesMundoAustral.png" alt="ViajesMundoAustral" class="comercio-logo2">
+                        <span class="comercio-name">Viajes Mundo Austral</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://www.facebook.com/p/VMC-Madera-61575053754980/">
+                        <img src="/logos/VMC.png" alt="VMC" class="comercio-logo2">
+                        <span class="comercio-name">VMC</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                    <div class="comercio-item" data-url="https://share.google/QhOjQb42YWdDA7yDJ">
+                        <img src="/logos/yoko-kan.jpg" alt="Yoko-Kan" class="comercio-logo2">
+                        <span class="comercio-name">Yoko-Kan</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                            <div class="comercio-item" data-url="https://share.google/l3WoHuWx6rqIQ1yiZ">
+                        <img src="/logos/CLINICA DENTAL Lucia Soler LOGO (1)_page-0002.jpg" alt="ClinicaDentalLuciaSoler" class="comercio-logo">
+                        <span class="comercio-name">Clinica Dental Lucia Soler</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                            <div class="comercio-item" data-url="https://share.google/hPG3XW5dh3k5vTuJR">
+                        <img src="/logos/Comercial agrícola_page-0001.jpg" alt="Comercial Agricola" class="comercio-logo2">
+                        <span class="comercio-name">Comercial Agricola</span>
+                        <button class="visit-btn">Visitar</button>
+                    </div>
+                </div> 
+            </div>
+            <!-- SLIDE 7 -->
+            <div class="carousel-item">
+                <div class="comercios-carousel-grid">
+                <div class="comercio-item" data-url="https://share.google/kz5K7iw6tnUqHlz7m">
+                    <img src="/logos/farmacia guerrero_page-0001.jpg" alt="Farmacia Guerrero" class="comercio-logo2">
+                    <span class="comercio-name">Farmacia Guerrero</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                        <div class="comercio-item" data-url="https://www.instagram.com/fontaneria_almussafes/">
+                    <img src="/logos/FONTANERIA INO_page-0001.jpg" alt="Fontaneria INO" class="comercio-logo">
+                    <span class="comercio-name">Fontaneria INO</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                        <div class="comercio-item" data-url="https://share.google/MUZhX5ERIonrDXgcC">
+                    <img src="/logos/Hervás Gimenez_page-0001.jpg" alt="Hervás Gimenez" class="comercio-logo">
+                    <span class="comercio-name">Hervás Gimenez</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                        <div class="comercio-item" data-url="https://share.google/rryy0PUeEcpw2J0UF">
+                    <img src="/logos/logo forn santacruz _page-0001.jpg" alt="Forn Santacruz" class="comercio-logo">
+                    <span class="comercio-name">Forn Santacruz</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                        <div class="comercio-item" data-url="https://share.google/GBlUe9Vs7HvELtLXr">
+                    <img src="/logos/LOGO INELECTRIC_page-0001.jpg" alt="Inelectric" class="comercio-logo">
+                    <span class="comercio-name">Inelectric</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                        <div class="comercio-item" data-url="https://share.google/pB7o7bfGvXMGaN85R">
+                    <img src="/logos/Logo solopizza_page-0001.jpg" alt="Solopizza" class="comercio-logo">
+                    <span class="comercio-name">Solopizza</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/TDZkAk3kjaroYqXrP">
+                    <img src="/logos/y yo con estos pelos.webp" alt="Y yo con estos pelos" class="comercio-logo">
+                    <span class="comercio-name">Y yo con estos pelos</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                <div class="comercio-item" data-url="https://share.google/EUo6GrY9gWI40G0SA">
+                    <img src="/logos/zapatos de lara_page-0001.jpg" alt="Zapatos de Lara" class="comercio-logo2">
+                    <span class="comercio-name">Los Zapatos de Lara</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                        <div class="comercio-item" data-url="https://www.facebook.com/people/Ana-Rodrigo-Est%C3%A9tica/100063354421270/">
+                    <img src="/logos/ana rodrigo.jpg" alt="Ana rodrigo" class="comercio-logo2">
+                    <span class="comercio-name">Ana rodrigo</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                        <div class="comercio-item" data-url="https://carniceriareyes.com">
+                    <img src="/logos/carniceria reyes.jpg" alt="Carniceria reyes" class="comercio-logo2">
+                    <span class="comercio-name">Carniceria reyes</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                        <div class="comercio-item" data-url="https://cariocaexpress.com/">
+                    <img src="/logos/carioca.jpg" alt="Carioca" class="comercio-logo2">
+                    <span class="comercio-name">Pizzeria Carioca</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                    <div class="comercio-item" data-url="https://www.facebook.com/centrodeesteticaELLES/">
+                    <img src="/logos/esteticien elle.jpg" alt="Carioca" class="comercio-logo">
+                    <span class="comercio-name">Esteticien Elles</span>
+                    <button class="visit-btn">Visitar</button>
+                </div>
+                
+                        <div class="comercio-item" data-url="https://www.instagram.com/protecx10n/">
+                    <img src="/logos/PROTECXION.jpg" alt="protecx10n" class="comercio-logo">
+                    <span class="comercio-name">protecx10n</span>
+                    <button class="visit-btn">Visitar</button>
+                </div> 
+                <div class="comercio-item" data-url="https://villajos.com/">
+                    <img src="/logos/villajos.jpg" alt="protecx10n" class="comercio-logo2">
+                    <span class="comercio-name">Talleres villajos</span>
+                    <button class="visit-btn">Visitar</button>
+                </div> 
+                </div> 
+            </div>
+        </div>
+  
+<!-- 
 <footer class="footer-section text-center mt-5 py-4">
     <div class="footerText mb-3">
         <h6><p>Comerços que col·laboren:</p></h6>
@@ -748,17 +1526,17 @@
             <button class="visit-btn">Visitar</button>
         </div> 
         <div class="comercio-item" data-url="https://villajos.com/">
-            <img src="/logos/villajos.jpg" alt="protecx10n" class="comercio-logo">
+            <img src="/logos/villajos.jpg" alt="protecx10n" class="comercio-logo2">
             <span class="comercio-name">Talleres villajos</span>
             <button class="visit-btn">Visitar</button>
         </div> 
-        <!-- </div>
+        </div>
                 <div class="comercio-item" data-url="">
             <img src="/logos/" alt="" class="comercio-logo">
             <span class="comercio-name"></span>
             <button class="visit-btn">Visitar</button>
         </div> -->
-    </div>
+    </div> 
 </footer>
 <div id="imageModal" class="image-modal">
     <span class="close-modal" id="closeModal">&times;</span>

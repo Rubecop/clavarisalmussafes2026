@@ -37,8 +37,7 @@ body::before {
         .header-wrapper {
             text-align: center;
             border-bottom: 2px solid #D7D7D9;
-            background: #A60808;
-            height: 100%;
+            background: linear-gradient(180deg, #02732A 0%, #730606 100%);
         }
 
 
@@ -49,18 +48,19 @@ body::before {
 
         .nav-buttons {
             display: flex;
-            justify-content: center;
-            gap: 95px;
-            margin-top: -180px;
+            justify-content: left;
+            gap: 45px;
+            margin-top: -190px;
+            margin-left: 280px;
             flex-wrap: wrap;
-            padding-bottom: 15px;
+            padding-bottom: 25px;
         }
        .nav-btn {
             background: linear-gradient(180deg, #730606 0%, #730606 100%);
             color:#D7D7D9;
             font-weight: 1000;
             font-size: 1.1rem;
-            padding: 12px 30px;
+            padding: 12px 20px;
             border: 2px solid #D7D7D9;
             border-radius: 15px;
             background-color: #549e00;
@@ -69,7 +69,7 @@ body::before {
             text-shadow: none;
             transition: all 0.3s ease;
             letter-spacing: 0.8px;
-            min-width: 350px;
+            min-width: 180px;
             box-shadow: 0 3px 6px rgba(20, 20, 20, 0.2);
         }
 
@@ -176,9 +176,9 @@ body::before {
             justify-self: end;
         }
         header .logo {
-            height: 180px; /* ajusta si quieres un logo un poco más pequeño */
+            height: 150px; /* ajusta si quieres un logo un poco más pequeño */
             width: auto;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         .social-icon {
@@ -220,10 +220,8 @@ body::before {
         footer {
             text-align: center;
             padding: 1.5rem;
-            font-size: 1.35rem;
-            background: linear-gradient(270deg, #730606, #730606);
+            background: linear-gradient(0deg, #02732A 0%, #730606 100%);
             color: #10a845;
-            margin-top: 2rem;
         }
 
         .event-list {
@@ -382,12 +380,6 @@ body::before {
             background-color: #ff4e4e;
             border-top: 4px solid #D7D7D9;
             width: 100%;
-        }
-
-        .footerText h6 {
-            font-weight: 700;
-            color: #D7D7D9;
-            margin-bottom: 15px;
         }
 
         .comercios-grid {

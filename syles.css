@@ -41,6 +41,12 @@ header, main, footer {
     background: linear-gradient(180deg, #0077be 0%, #004d7a 100%);
 }
 
+/* Hacemos que la tarjeta del header sea invisible para que se vea el fondo azul */
+header .card {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
 header .card:hover {
     transform: none !important;
 }
@@ -145,9 +151,14 @@ header .card-body {
 }
 
 header .logo {
-    height: 150px;
-    width: auto;
+    width: 140px; /* Ancho fijo */
+    height: 140px; /* Alto fijo para que sea un cuadrado perfecto */
     margin-top: 5px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 50%; /* Convierte el cuadrado en un círculo */
+    border: 2px solid #1a1a1a; /* Borde negrito */
+    padding: 8px; /* Espacio interior para que el dibujo respire */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
 }
 
 .social-icon {
@@ -510,11 +521,12 @@ footer {
     .pumpkin-3 { top: 125px; left: 24%; font-size: 2rem; transform: rotate(10deg); animation-delay: 1s; }
     .pumpkin-4 { display: none; }
     
-    .logo {
-        width: 100px;
-        margin: 0 auto 0.5rem auto !important;
-        display: block;
-    }
+  
+.logo { 
+    width: 80px; 
+    height: 80px; /* Añade siempre la misma altura que el ancho */
+    margin: 0 auto; 
+}
 
     .comercio-logo { width: 65px; height: 65px; }
     .comercios-grid { gap: 5px; }

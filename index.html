@@ -67,6 +67,7 @@
             max-width: 100%;
             margin: 0 auto;
             position: relative;
+            margin-bottom: 25px;
         }
         
         .comercios-carousel-grid {
@@ -150,14 +151,14 @@
         }
 
         
-        .footerText h6 {
+        .footerText {
             font-size: 1.3rem;
             color: #D7D7D9;
             font-weight: 600;
         }
         
         .carousel-indicators {
-            margin-bottom: -23px;
+            margin-bottom: -33px;
         }
         
         .carousel-indicators button {
@@ -247,53 +248,55 @@
 </head>
 <body>
 <header>
-    <span class="header-pumpkin pumpkin-1" style="--rotate: -25deg;">☃️​</span>
-    <span class="header-pumpkin pumpkin-2" style="--rotate: 20deg;">☃️​</span>
-    <span class="header-pumpkin pumpkin-3" style="--rotate: 10deg;">🎅🏼​</span>
-    <span class="header-pumpkin pumpkin-4" style="--rotate: -10deg;">☃️​</span>
-    <span class="header-pumpkin pumpkin-5" style="--rotate: -15deg;">🎅🏼​</span>
-    <span class="header-pumpkin pumpkin-6" style="--rotate: 15deg;">🎅🏼</span>
-    <div class = "header-wrapper">    
-            
-            <div class="card shadow-sm border-0 p-3">
-                <div class="card-body d-flex align-items-center justify-content-center flex-wrap">
-                    
-                    <!-- Logo a la izquierda -->
-                    <div class="header-left">
-                        <img src="escut.PNG" alt="Clavaris Almussafes 2026 Logo" class="logo">
-                    </div>
-        
-                    <!-- Título centrado -->
-                    <div class="header-center">
-                        <h1 class="header-title mb-0">Clavaris de la Divina Aurora</h1>
-                    </div>
-        
-                    <!-- Redes sociales a la derecha -->
-                    <div class="header-right">
-                        <a href="https://www.instagram.com/clavarisalmussafes2026" target="_blank">
-                            <img src="instagram.png" alt="Instagram" class="social-icon">
-                        </a>
-                        <a href="https://www.facebook.com/share/19ccn8DqNH/" target="_blank">
-                            <img src="facebook.webp" alt="Facebook" class="social-icon">
-                        </a>
-                        <a href="sugerencias.html" target="_blank">
-                            <img src="correito.webp" alt="Correo" class="social-icon">
-                        </a>
-                    </div>
-                </div>
-            </div>
-    </div>    
-        <!-- Botones de navegación -->
-        <nav class="nav-buttons">
-            <a href="index.html" class="nav-btn">INICI</a>
-            <a href="eventos.html" class="nav-btn">EVENTS</a>
-            <a href="sorteos.html" class="nav-btn">RIFES</a>
-            <a href="comercios.html" class="nav-btn">COMERÇOS</a>
+    <div class="header-wrapper">
+        <span class="header-pumpkin pumpkin-1" style="--rotate: -25deg;">🏖️</span>
+        <span class="header-pumpkin pumpkin-2" style="--rotate: 20deg;">🍹</span>
+        <span class="header-pumpkin pumpkin-3" style="--rotate: 10deg;">🏖️</span>
+        <span class="header-pumpkin pumpkin-4" style="--rotate: -10deg;">🍹</span>
+        <span class="header-pumpkin pumpkin-5" style="--rotate: -15deg;">🏖️</span>
+        <span class="header-pumpkin pumpkin-6" style="--rotate: 15deg;">🍹</span>
 
-        </nav>
-        <div class="header-right d-flex align-items-center gap-3">
-            <div id="google_translate_element"></div>
-          </div>
+        <!-- Hemos restaurado la tarjeta (card) para que el fondo sea igual que en las otras webs -->
+        <div class="card shadow-sm border-0 p-3" style="background: transparent; box-shadow: none !important;">
+            <div class="card-body d-flex align-items-center justify-content-center flex-wrap">
+                
+                <div class="header-left d-flex align-items-center">
+                    <img src="escut2.png" alt="Clavaris Almussafes 2026 Logo" class="logo">
+                </div>
+    
+                <!-- Aquí está el título que faltaba -->
+                <div class="header-center text-center flex-grow-1">
+                    <h1 class="header-title mb-0">Clavaris de la Divina Aurora</h1>
+                </div>
+    
+               <div class="header-right d-flex align-items-center gap-2">
+                <a href="https://www.instagram.com/clavarisalmussafes2026" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.facebook.com/share/19ccn8DqNH/" target="_blank">
+                    <img src="facebook.webp" alt="Facebook" class="social-icon">
+                </a>
+                <!-- AQUÍ AÑADIMOS TIKTOK (pondrás el link en el href="#" más adelante) -->
+                <a href="#" target="_blank">
+                    <img src="tiktok.png" alt="TikTok" class="social-icon">
+                </a>
+                <!-- --------------------------------------------------------------- -->
+                <a href="sugerencias.html" target="_blank">
+                    <img src="correito.webp" alt="Correo" class="social-icon">
+                </a>
+            </div>
+    
+            </div>
+        </div>
+    </div>    
+
+    <!-- Botones de navegación (El botón INICI ya está descomentado) -->
+    <nav class="nav-buttons">
+        <a href="index.html" class="nav-btn active">INICI</a>
+        <a href="eventos.html" class="nav-btn">EVENTS</a>
+        <a href="sorteos.html" class="nav-btn">RIFES</a>
+        <a href="comercios.html" class="nav-btn">COMERÇOS</a>
+    </nav>
 </header>
 
 <main class="full-width container my-4">
@@ -324,15 +327,6 @@
                             </div>
                             <div class="carousel-item">
                                 <img src="imagenes/c6.jfif" class="d-block w-100 rounded" alt="">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="imagenes/c7.jpeg" class="d-block w-100 rounded" alt="">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="imagenes/c8.jpeg" class="d-block w-100 rounded" alt="">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="imagenes/c9.jpeg" class="d-block w-100 rounded" alt="">
                             </div>
                         </div>
 
@@ -383,22 +377,23 @@
 
         <!-- Próximos eventos -->
 
-        <section class="col-12 col-md-4">
-            <div class="card shadow-sm border-0 h-100">
-                <div class="card-body">
-                    <h2 class="card-title text-center mb-3">Pròxims Events</h2>
-                    <div class="event-list">
-                        <div class="event-card">
-                            <h4>Festa de Reis  </h4>
-                            <p class="event-date">📅 5 de Gener de 2026</p>
-                            <p class="event-place">Pub Magenta</p>
-                            <p class="event-description">Amb el Dj Eric Glint!</p>
-                            <img src="FestaMagenta5GEner.jpeg" alt="Birrafest Cartel" class="event-poster" id="Poster">
-                            <p class="poster-hint">👆 Clic para ampliar</p>
-                        </div> 
-                    </div>
-                </div>
+      <section class="col-12 col-md-4">
+    <div class="card shadow-sm border-0 h-100">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-3">Pròxims Events</h2>
+            <div class="event-list">
+                <div class="event-card">
+                    <h4>Discomòbil Clavaris🎶</h4>
+                    <p class="event-date">📅 30 de maig</p>
+                    <p class="event-place">📍 Pista polivalent de almussafes</p>
+                    <p class="event-description">Comencem a les 23:00   </p>
+                    <img src="dj/discomobil.jpeg" alt="Cartel Discomòbil" class="event-poster" id="Poster">
+                    <p class="poster-hint">👆 Clic per ampliar</p>
+                </div> 
             </div>
+        </div>
+    </div>
+</section>
             
         </section>
 
@@ -409,12 +404,12 @@
                     <h2 class="card-title text-center mb-3">Rifes & Loteries</h2>
                     <div class="event-list">
                         <div class="event-card">
-                            <h4>Cistella de Nadal</h4>
-                            <img src="GanadorCistella.jpeg" alt="GanadorCistella" class="event-poster" id="Poster1">
+                            <h4>Loteria actual</h4>
+                            <img src="LoteriaNavidad.jpeg" alt="Cartel Loteria" class="event-poster" id="Poster1">
                             <p class="poster-hint">👆 Clic para ampliar</p>
                         </div> 
                         <div class="event-card">
-                            <h4>Loteria del Niño</h4>
+                            <h4>Proxima Loteria</h4>
                             <img src="LoteriaElNino.jpeg" alt="Cartel Loteria" class="event-poster" id="Poster1">
                             <p class="poster-hint">👆 Clic para ampliar</p>
                         </div> 
@@ -427,9 +422,9 @@
 </main>
 
 
-<footer class="footer-section text-center mt-5 py-4">
-    <div class="footerText mb-3">
-        <h6><p>Comerços que col·laboren:</p></h6>
+<footer class="footer-section">
+    <div class="footerText">
+       Comerços que col·laboren:
     </div>
     
     <div id="comerciosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
